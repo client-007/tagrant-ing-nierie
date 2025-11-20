@@ -32,6 +32,7 @@ const translations = {
     
     // Services
     'services.title': 'Nos services principaux',
+    'services.subtitle': 'Solutions d\'ingénierie complètes adaptées aux besoins de votre projet.',
     'services.project': 'Gestion de projet',
     'services.project.desc': 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings et la livraison des projets',
     'services.studies': 'Études techniques & Coordination',
@@ -50,6 +51,7 @@ const translations = {
     
     // Values
     'values.title': 'Nos valeurs',
+    'values.subtitle': 'Les principes qui guident notre travail et nos relations.',
     'values.integrity': 'Intégrité & Transparence',
     'values.integrity.desc': 'Nous agissons avec honnêteté et clarté dans tous nos projets, construisant la confiance avec nos clients et partenaires.',
     'values.excellence': 'Excellence technique',
@@ -60,10 +62,18 @@ const translations = {
     'values.innovation.desc': 'Nous adoptons les outils numériques et les méthodes créatives pour optimiser les solutions d\'ingénierie.',
     'values.sustainability': 'Durabilité & Responsabilité',
     'values.sustainability.desc': 'Nous concevons dans le respect des personnes, des communautés et de l\'environnement.',
+    'values.agility': 'Agilité Opérationnelle',
+    'values.agility.desc': 'Approche flexible et réactive pour répondre aux besoins dynamiques des projets.',
     
     // Team
     'team.title': 'Découvrez notre équipe',
-    'team.subtitle': 'Ce que disent les professionnels de notre équipe sur LinkedIn',
+    'team.subtitle': 'Voix authentiques de professionnels sur LinkedIn',
+    
+    // CTA Section
+    'cta.title': 'Prêt à démarrer votre projet ?',
+    'cta.subtitle': 'Discutons de la manière dont nous pouvons apporter excellence technique et innovation à vos projets d\'infrastructure.',
+    'cta.quote': 'Demander un devis',
+    'cta.services': 'Découvrir nos services',
     
     // Footer
     'footer.quote': 'Demander un devis',
@@ -97,6 +107,7 @@ const translations = {
     
     // Services
     'services.title': 'Our Core Services',
+    'services.subtitle': 'Comprehensive engineering solutions tailored to your project needs.',
     'services.project': 'Project Management',
     'services.project.desc': 'Operational support in civil engineering and infrastructure to secure schedules and project delivery',
     'services.studies': 'Technical Studies & Coordination',
@@ -115,6 +126,7 @@ const translations = {
     
     // Values
     'values.title': 'Our Values',
+    'values.subtitle': 'The principles that guide our work and relationships.',
     'values.integrity': 'Integrity & Transparency',
     'values.integrity.desc': 'We act with honesty and clarity in all our projects, building trust with our clients and partners.',
     'values.excellence': 'Technical Excellence',
@@ -125,10 +137,18 @@ const translations = {
     'values.innovation.desc': 'We embrace digital tools and creative methods to optimize engineering solutions.',
     'values.sustainability': 'Sustainability & Responsibility',
     'values.sustainability.desc': 'We design with respect for people, communities, and the environment.',
+    'values.agility': 'Operational Agility',
+    'values.agility.desc': 'Flexible and responsive approach to meet dynamic project needs.',
     
     // Team
     'team.title': 'Discover Our Team',
-    'team.subtitle': 'What professionals say about our team on LinkedIn',
+    'team.subtitle': 'Authentic voices from professionals on LinkedIn',
+    
+    // CTA Section
+    'cta.title': 'Ready to Start Your Project?',
+    'cta.subtitle': 'Let\'s discuss how we can bring technical excellence and innovation to your infrastructure projects.',
+    'cta.quote': 'Request a Quote',
+    'cta.services': 'Explore Services',
     
     // Footer
     'footer.quote': 'Request a Quote',

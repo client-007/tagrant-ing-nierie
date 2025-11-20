@@ -1,14 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, Search, X } from 'lucide-react';
+import { Menu, Search, X, Globe } from 'lucide-react';
 import { useState } from 'react';
 import logo from '@/assets/tagrant-logo.png';
+import { Input } from './ui/input';
 
 export const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const navLinks = [
     { path: '/', label: t('nav.home') },
@@ -21,6 +24,21 @@ export const Navigation = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Implement search functionality - for now just log
+      console.log('Searching for:', searchQuery);
+      // You can navigate to a search results page or filter content
+      setSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'fr' ? 'en' : 'fr');
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
@@ -50,33 +68,25 @@ export const Navigation = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" aria-label="Search">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              aria-label="Search"
+              onClick={() => setSearchOpen(!searchOpen)}
+            >
               <Search className="h-5 w-5" />
             </Button>
 
             {/* Language Switcher */}
-            <div className="hidden md:flex items-center space-x-1 border border-border rounded-md p-1">
-              <button
-                onClick={() => setLanguage('fr')}
-                className={`px-3 py-1 text-sm font-medium rounded transition-colors ${
-                  language === 'fr'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-foreground/70 hover:text-foreground'
-                }`}
-              >
-                FR
-              </button>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 text-sm font-medium rounded transition-colors ${
-                  language === 'en'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-foreground/70 hover:text-foreground'
-                }`}
-              >
-                EN
-              </button>
-            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="hidden md:flex items-center space-x-2"
+            >
+              <Globe className="h-4 w-4" />
+              <span className="font-medium">{language.toUpperCase()}</span>
+            </Button>
 
             {/* Mobile Menu Button */}
             <Button
@@ -90,6 +100,36 @@ export const Navigation = () => {
             </Button>
           </div>
         </div>
+
+        {/* Search Bar */}
+        {searchOpen && (
+          <div className="py-4 border-t border-border">
+            <form onSubmit={handleSearch} className="flex items-center space-x-2">
+              <Input
+                type="text"
+                placeholder={language === 'fr' ? 'Rechercher...' : 'Search...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1"
+                autoFocus
+              />
+              <Button type="submit" size="sm">
+                <Search className="h-4 w-4" />
+              </Button>
+              <Button 
+                type="button" 
+                variant="ghost" 
+                size="sm"
+                onClick={() => {
+                  setSearchOpen(false);
+                  setSearchQuery('');
+                }}
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </form>
+          </div>
+        )}
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
@@ -107,33 +147,19 @@ export const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center space-x-2 pt-4 border-t border-border">
-                <button
+              <div className="pt-4 border-t border-border">
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => {
-                    setLanguage('fr');
+                    toggleLanguage();
                     setMobileMenuOpen(false);
                   }}
-                  className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
-                    language === 'fr'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-foreground/70'
-                  }`}
+                  className="w-full flex items-center justify-center space-x-2"
                 >
-                  FR
-                </button>
-                <button
-                  onClick={() => {
-                    setLanguage('en');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
-                    language === 'en'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-foreground/70'
-                  }`}
-                >
-                  EN
-                </button>
+                  <Globe className="h-4 w-4" />
+                  <span className="font-medium">{language.toUpperCase()}</span>
+                </Button>
               </div>
             </div>
           </div>
