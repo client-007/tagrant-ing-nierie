@@ -14,20 +14,20 @@ export const HeroCarousel = () => {
   const slides = [
     {
       image: heroSlide1,
-      title: t('hero.title'),
-      subtitle: t('hero.subtitle'),
+      title: t('hero.slide1.title'),
+      subtitle: t('hero.slide1.subtitle'),
       cta: { text: t('nav.services'), link: '/services' },
     },
     {
       image: heroSlide2,
-      title: t('hero.title'),
-      subtitle: t('hero.subtitle'),
+      title: t('hero.slide2.title'),
+      subtitle: t('hero.slide2.subtitle'),
       cta: { text: t('nav.contact'), link: '/contact' },
     },
     {
       image: heroSlide3,
-      title: t('hero.title'),
-      subtitle: t('hero.subtitle'),
+      title: t('hero.slide3.title'),
+      subtitle: t('hero.slide3.subtitle'),
       cta: { text: t('hero.quote'), link: '/contact' },
     },
   ];

@@ -110,7 +110,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative aspect-square overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -141,19 +141,19 @@ const Index = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-card border border-border rounded-lg p-8 flex flex-col">
+            <div className="bg-card rounded-lg p-8 flex flex-col shadow-sm">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Target className="h-6 w-6 text-primary" />
+                <div className="h-16 w-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Target className="h-8 w-8 text-primary" />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">{t('mission.title')}</h2>
               </div>
               <p className="text-foreground/80 leading-relaxed">{t('mission.text')}</p>
             </div>
-            <div className="bg-card border border-border rounded-lg p-8 flex flex-col">
+            <div className="bg-card rounded-lg p-8 flex flex-col shadow-sm">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="h-12 w-12 rounded-full bg-brand-yellow/20 flex items-center justify-center flex-shrink-0">
-                  <Eye className="h-6 w-6 text-brand-yellow" />
+                <div className="h-16 w-16 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <Eye className="h-8 w-8 text-accent" />
                 </div>
                 <h2 className="text-2xl font-bold text-foreground">{t('vision.title')}</h2>
               </div>

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
-import { Button } from './ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import teamMember1 from '@/assets/team-member-1.jpg';
+import teamMember2 from '@/assets/team-member-2.jpg';
+import teamMember3 from '@/assets/team-member-3.jpg';
 
 interface Testimonial {
   name: string;
@@ -8,33 +11,37 @@ interface Testimonial {
   company: string;
   quote: string;
   linkedinUrl: string;
+  image: string;
   initial: string;
 }
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Jean Dupont',
+    name: 'Jean-Pierre Dubois',
     role: 'Project Director',
     company: 'Infrastructure France',
-    quote: 'Exceptional technical expertise and professional project management. Their team delivered our complex infrastructure project on time and within budget.',
-    linkedinUrl: '#',
-    initial: 'J',
+    quote: 'TAGRANT INGENIERIE transformed our approach to project management. Their expertise in coordinating complex infrastructure projects while maintaining strict timelines was exceptional.',
+    linkedinUrl: 'https://linkedin.com',
+    image: teamMember1,
+    initial: 'JD',
   },
   {
     name: 'Marie Laurent',
-    role: 'Civil Engineer',
-    company: 'Construction Plus',
-    quote: 'Outstanding collaboration and technical precision. TAGRANT INGENIERIE brought innovative solutions to our most challenging structural problems.',
-    linkedinUrl: '#',
-    initial: 'M',
+    role: 'Technical Manager',
+    company: 'Build Solutions SA',
+    quote: 'The technical studies and BIM coordination provided by TAGRANT were instrumental in delivering our railway project. Their attention to detail and innovative problem-solving approach set them apart.',
+    linkedinUrl: 'https://linkedin.com',
+    image: teamMember2,
+    initial: 'ML',
   },
   {
-    name: 'Pierre Martin',
-    role: 'Operations Manager',
-    company: 'Urban Development',
-    quote: 'Professional, reliable, and highly skilled. Their BIM coordination and technical studies exceeded our expectations.',
-    linkedinUrl: '#',
-    initial: 'P',
+    name: 'Thomas Bernard',
+    role: 'Infrastructure Engineer',
+    company: 'European Rail Network',
+    quote: 'Professional training programs from TAGRANT elevated our team\'s capabilities in modern engineering practices. The combination of theoretical knowledge and practical application was outstanding.',
+    linkedinUrl: 'https://linkedin.com',
+    image: teamMember3,
+    initial: 'TB',
   },
 ];
 
@@ -53,54 +60,56 @@ export const TestimonialCarousel = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-card border border-border rounded-lg p-8 md:p-12 relative">
-        <div className="flex items-start space-x-6 mb-6">
-          <div className="flex-shrink-0">
-            <div className="h-16 w-16 rounded-full bg-muted flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary">
-                {currentTestimonial.initial}
-              </span>
-            </div>
-          </div>
-          <div className="flex-1">
-            <h3 className="text-xl font-bold text-foreground mb-1">
+      <div className="bg-card rounded-lg p-8 md:p-12 shadow-sm">
+        <div className="flex flex-col items-center text-center">
+          {/* Avatar */}
+          <Avatar className="h-24 w-24 mb-6">
+            <AvatarImage src={currentTestimonial.image} alt={currentTestimonial.name} />
+            <AvatarFallback className="text-xl font-semibold bg-primary text-primary-foreground">
+              {currentTestimonial.initial}
+            </AvatarFallback>
+          </Avatar>
+
+          {/* Quote */}
+          <blockquote className="text-lg md:text-xl text-foreground/90 mb-6 italic leading-relaxed">
+            "{currentTestimonial.quote}"
+          </blockquote>
+
+          {/* Name and Role */}
+          <div className="mb-4">
+            <p className="text-lg font-semibold text-foreground mb-1">
               {currentTestimonial.name}
-            </h3>
-            <p className="text-sm text-muted-foreground mb-1">
-              {currentTestimonial.role}
             </p>
             <p className="text-sm text-muted-foreground">
-              {currentTestimonial.company}
+              {currentTestimonial.role} • {currentTestimonial.company}
             </p>
           </div>
+
+          {/* LinkedIn Link */}
           <a
             href={currentTestimonial.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 text-primary hover:text-brand-yellow transition-colors"
-            aria-label="LinkedIn Profile"
+            className="inline-flex items-center space-x-2 text-primary hover:text-brand-yellow transition-colors group"
+            aria-label={`View ${currentTestimonial.name}'s LinkedIn profile`}
           >
-            <Linkedin className="h-6 w-6" />
+            <Linkedin className="h-5 w-5 group-hover:text-brand-yellow transition-colors" />
+            <span className="text-sm font-medium">View LinkedIn Profile</span>
           </a>
         </div>
-        <blockquote className="text-lg text-foreground/80 italic">
-          "{currentTestimonial.quote}"
-        </blockquote>
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-center space-x-4 mt-6">
-        <Button
-          variant="outline"
-          size="icon"
+      <div className="flex items-center justify-center mt-8 space-x-4">
+        <button
           onClick={goToPrevious}
-          className="rounded-full"
+          className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
           aria-label="Previous testimonial"
         >
-          <ChevronLeft className="h-5 w-5" />
-        </Button>
+          <ChevronLeft className="h-6 w-6 text-foreground" />
+        </button>
 
-        {/* Dots */}
+        {/* Dots Indicator */}
         <div className="flex space-x-2">
           {testimonials.map((_, index) => (
             <button
@@ -109,22 +118,20 @@ export const TestimonialCarousel = () => {
               className={`h-2 rounded-full transition-all ${
                 index === currentIndex
                   ? 'w-8 bg-primary'
-                  : 'w-2 bg-muted hover:bg-muted-foreground/30'
+                  : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
 
-        <Button
-          variant="outline"
-          size="icon"
+        <button
           onClick={goToNext}
-          className="rounded-full"
+          className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
           aria-label="Next testimonial"
         >
-          <ChevronRight className="h-5 w-5" />
-        </Button>
+          <ChevronRight className="h-6 w-6 text-foreground" />
+        </button>
       </div>
     </div>
   );
