@@ -25,6 +25,12 @@ const translations = {
     'hero.cta': 'Découvrir nos services',
     'hero.contact': 'Nous contacter',
     'hero.quote': 'Demander un devis',
+    'hero.slide1.title': 'Excellence en Gestion de Projet',
+    'hero.slide1.subtitle': 'Pilotage stratégique et coordination optimale de vos projets d\'infrastructure',
+    'hero.slide2.title': 'Études Techniques de Pointe',
+    'hero.slide2.subtitle': 'Analyses approfondies et solutions innovantes pour vos défis techniques',
+    'hero.slide3.title': 'Formation Professionnelle Expert',
+    'hero.slide3.subtitle': 'Développement des compétences pour l\'ingénierie de demain',
     
     // Company Overview
     'overview.title': 'Votre partenaire en gestion de projets d\'ingénierie et innovation technique en France',
@@ -100,6 +106,12 @@ const translations = {
     'hero.cta': 'Explore Our Services',
     'hero.contact': 'Contact Us',
     'hero.quote': 'Request a Quote',
+    'hero.slide1.title': 'Excellence in Project Management',
+    'hero.slide1.subtitle': 'Strategic leadership and optimal coordination of your infrastructure projects',
+    'hero.slide2.title': 'Advanced Technical Studies',
+    'hero.slide2.subtitle': 'In-depth analysis and innovative solutions for your technical challenges',
+    'hero.slide3.title': 'Expert Professional Training',
+    'hero.slide3.subtitle': 'Skills development for tomorrow\'s engineering',
     
     // Company Overview
     'overview.title': 'Your Partner in Engineering Project Management and Technical Innovation in France',

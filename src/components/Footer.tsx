@@ -15,19 +15,23 @@ export const Footer = () => {
     { path: '/contact', label: t('nav.contact') },
   ];
 
+  const serviceLinks = [
+    { path: '/services/project-management', label: t('services.project') },
+    { path: '/services/technical-studies', label: t('services.studies') },
+    { path: '/services/inspection', label: t('services.inspection') },
+    { path: '/services/training', label: t('services.training') },
+  ];
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Logo & CTA */}
+          {/* Logo & Description */}
           <div className="space-y-4">
             <img src={logo} alt="TAGRANT INGENIERIE" className="h-16 w-auto brightness-0 invert" />
             <p className="text-sm opacity-90">
               {t('overview.description')}
             </p>
-            <Button variant="secondary" asChild>
-              <Link to="/contact">{t('footer.quote')}</Link>
-            </Button>
           </div>
 
           {/* Quick Links */}
@@ -47,7 +51,24 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">{t('nav.services')}</h3>
+            <ul className="space-y-2">
+              {serviceLinks.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm opacity-90 hover:opacity-100 transition-opacity"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Social */}
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('nav.contact')}</h3>
             <ul className="space-y-3">
@@ -68,30 +89,30 @@ export const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.follow')}</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
+            
+            {/* Social Links */}
+            <div className="mt-6">
+              <h4 className="text-base font-semibold mb-3">{t('footer.follow')}</h4>
+              <div className="flex space-x-4">
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

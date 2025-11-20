@@ -46,7 +46,7 @@ export const Navigation = () => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="TAGRANT INGENIERIE" className="h-12 w-auto" />
+            <img src={logo} alt="TAGRANT INGENIERIE" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,7 +85,7 @@ export const Navigation = () => {
               className="hidden md:flex items-center space-x-2"
             >
               <Globe className="h-4 w-4" />
-              <span className="font-medium">{language.toUpperCase()}</span>
+              <span className="font-medium">{language === 'fr' ? 'EN' : 'FR'}</span>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -158,7 +158,7 @@ export const Navigation = () => {
                   className="w-full flex items-center justify-center space-x-2"
                 >
                   <Globe className="h-4 w-4" />
-                  <span className="font-medium">{language.toUpperCase()}</span>
+                  <span className="font-medium">{language === 'fr' ? 'EN' : 'FR'}</span>
                 </Button>
               </div>
             </div>
