@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Linkedin, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/tagrant-logo.png';
 
 export const Footer = () => {
@@ -102,15 +102,6 @@ export const Footer = () => {
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>

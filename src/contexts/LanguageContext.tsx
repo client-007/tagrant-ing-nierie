@@ -89,6 +89,19 @@ const translations = {
     'footer.address': 'Adresse',
     'footer.email': 'Email',
     'footer.phone': 'Téléphone',
+    
+    // Search
+    'search.results': 'Résultats de recherche',
+    'search.for': 'Résultats pour',
+    'search.empty': 'Entrez un terme de recherche',
+    'search.result': 'résultat trouvé',
+    'search.results.plural': 'résultats trouvés',
+    'search.view': 'Voir la page',
+    'search.noResults': 'Aucun résultat trouvé',
+    'search.noResults.desc': 'Nous n\'avons trouvé aucun résultat pour votre recherche. Essayez ces suggestions :',
+    'search.suggestions.1': 'Vérifiez l\'orthographe de vos mots-clés',
+    'search.suggestions.2': 'Utilisez des termes plus généraux',
+    'search.suggestions.3': 'Essayez différents mots-clés',
   },
   en: {
     // Navigation
@@ -170,6 +183,19 @@ const translations = {
     'footer.address': 'Address',
     'footer.email': 'Email',
     'footer.phone': 'Phone',
+    
+    // Search
+    'search.results': 'Search Results',
+    'search.for': 'Results for',
+    'search.empty': 'Enter a search term',
+    'search.result': 'result found',
+    'search.results.plural': 'results found',
+    'search.view': 'View page',
+    'search.noResults': 'No Results Found',
+    'search.noResults.desc': 'We couldn\'t find any results for your search. Try these suggestions:',
+    'search.suggestions.1': 'Check the spelling of your keywords',
+    'search.suggestions.2': 'Use more general terms',
+    'search.suggestions.3': 'Try different keywords',
   },
 };
 

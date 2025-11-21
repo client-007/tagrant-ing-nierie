@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, Search, X, Globe } from 'lucide-react';
@@ -9,6 +9,7 @@ import { Input } from './ui/input';
 export const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,11 +29,10 @@ export const Navigation = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Implement search functionality - for now just log
-      console.log('Searching for:', searchQuery);
-      // You can navigate to a search results page or filter content
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
       setSearchOpen(false);
       setSearchQuery('');
+      setMobileMenuOpen(false);
     }
   };
 
