@@ -2,6 +2,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
+import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog, Heart, Zap } from 'lucide-react';
 
 const About = () => {
@@ -28,17 +29,17 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {language === 'fr' ? 'À propos de nous' : 'About Us'}
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-95">
-            {language === 'fr'
-              ? 'TAGRANT INGENIERIE est une société d\'ingénierie spécialisée dans la gestion de projets d\'infrastructure, les études techniques et la formation professionnelle.'
-              : 'TAGRANT INGENIERIE is an engineering company specialized in infrastructure project management, technical studies and professional training.'}
-          </p>
+      {/* Who We Are */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              {language === 'fr' ? 'À propos de nous' : 'About Us'}
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('overview.description')}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -136,6 +137,25 @@ const About = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Testimonials */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              {language === 'fr' ? 'Découvrez notre équipe' : 'Discover Our Team'}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {language === 'fr' 
+                ? 'Voix authentiques de professionnels sur LinkedIn' 
+                : 'Authentic voices from professionals on LinkedIn'}
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <TestimonialCarousel />
           </div>
         </div>
       </section>

@@ -55,7 +55,9 @@ const Contact = () => {
                       <p className="font-medium">
                         {language === 'fr' ? 'Adresse' : 'Address'}
                       </p>
-                      <p className="text-sm text-muted-foreground">Paris, France</p>
+                      <p className="text-sm text-muted-foreground">
+                        123 Avenue des Champs-Élysées, Paris, France
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">

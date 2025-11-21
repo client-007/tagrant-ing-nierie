@@ -34,12 +34,6 @@ const Index = () => {
       image: serviceInspection,
       link: '/services/inspection',
     },
-    {
-      title: t('services.training'),
-      description: t('services.training.desc'),
-      image: serviceTraining,
-      link: '/services/training',
-    },
   ];
 
   const values = [
@@ -107,7 +101,7 @@ const Index = () => {
               {t('services.subtitle')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
                 <div className="relative aspect-[4/3.3] overflow-hidden">

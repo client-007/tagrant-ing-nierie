@@ -85,29 +85,33 @@ const Services = () => {
               return (
                 <Card
                   key={index}
-                  className="overflow-hidden hover:shadow-xl transition-shadow border-2 hover:border-primary/50"
+                  className="overflow-hidden hover:shadow-xl transition-all border-2 hover:border-primary/50"
                 >
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <div className="bg-accent p-3 rounded-lg">
-                          <Icon className="h-6 w-6 text-accent-foreground" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-primary-foreground">{service.title}</h2>
+                  </div>
+                  <CardHeader className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                        <CardDescription className="text-base leading-relaxed">
+                          {service.details}
+                        </CardDescription>
                       </div>
                     </div>
-                  </div>
-                  <CardHeader>
-                    <CardDescription className="text-base">{service.details}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button className="w-full" asChild>
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
+                      asChild
+                    >
                       <Link to={service.link}>
                         {t('services.learn')}
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -122,19 +126,23 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-accent text-accent-foreground">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             {language === 'fr'
               ? 'Prêt à démarrer votre projet ?'
               : 'Ready to start your project?'}
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
             {language === 'fr'
               ? 'Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé.'
               : 'Contact us to discuss your needs and get a personalized quote.'}
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button 
+            size="lg" 
+            className="bg-brand-yellow text-brand-navy hover:bg-brand-yellow/90 font-semibold border-2 border-brand-yellow"
+            asChild
+          >
             <Link to="/contact">
               {language === 'fr' ? 'Demander un devis' : 'Request a Quote'}
             </Link>
