@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Linkedin } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Card, CardContent } from '@/components/ui/card';
 import teamMember1 from '@/assets/team-member-1.jpg';
 import teamMember2 from '@/assets/team-member-2.jpg';
 import teamMember3 from '@/assets/team-member-3.jpg';
@@ -59,78 +59,86 @@ export const TestimonialCarousel = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-card rounded-lg p-8 md:p-12 shadow-sm border border-border">
-        <div className="flex flex-col items-center text-center">
-          {/* Avatar */}
-          <Avatar className="h-32 w-32 mb-6 ring-4 ring-primary/10">
-            <AvatarImage src={currentTestimonial.image} alt={currentTestimonial.name} />
-            <AvatarFallback className="text-2xl font-semibold bg-primary text-primary-foreground">
-              {currentTestimonial.initial}
-            </AvatarFallback>
-          </Avatar>
+    <div className="relative">
+      <Card className="overflow-hidden border-2">
+        <CardContent className="p-0">
+          <div className="grid md:grid-cols-2 gap-0">
+            {/* Image Side */}
+            <div className="relative aspect-square md:aspect-auto">
+              <img 
+                src={currentTestimonial.image} 
+                alt={currentTestimonial.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* Name and Role */}
-          <div className="mb-2">
-            <p className="text-xl font-bold text-foreground mb-1">
-              {currentTestimonial.name}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {currentTestimonial.role} • {currentTestimonial.company}
-            </p>
+            {/* Content Side */}
+            <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="space-y-6">
+                {/* Quote */}
+                <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed italic">
+                  "{currentTestimonial.quote}"
+                </blockquote>
+
+                {/* Author Info */}
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {currentTestimonial.name}
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    {currentTestimonial.role}
+                  </p>
+                  <p className="text-md text-muted-foreground/80">
+                    {currentTestimonial.company}
+                  </p>
+                </div>
+
+                {/* LinkedIn */}
+                <a
+                  href={currentTestimonial.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="text-sm font-medium">Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
           </div>
+        </CardContent>
+      </Card>
 
-          {/* LinkedIn Link */}
-          <a
-            href={currentTestimonial.linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-primary hover:text-brand-yellow transition-colors group mb-6"
-            aria-label={`View ${currentTestimonial.name}'s LinkedIn profile`}
-          >
-            <Linkedin className="h-5 w-5 group-hover:text-brand-yellow transition-colors" />
-          </a>
+      {/* Navigation Buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/90 hover:bg-background p-3 rounded-full shadow-lg transition-all z-10"
+        aria-label="Previous testimonial"
+      >
+        <ChevronLeft className="h-6 w-6 text-foreground" />
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/90 hover:bg-background p-3 rounded-full shadow-lg transition-all z-10"
+        aria-label="Next testimonial"
+      >
+        <ChevronRight className="h-6 w-6 text-foreground" />
+      </button>
 
-          {/* Quote */}
-          <blockquote className="text-base md:text-lg text-foreground/80 italic leading-relaxed">
-            "{currentTestimonial.quote}"
-          </blockquote>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="flex items-center justify-center mt-8 space-x-4">
-        <button
-          onClick={goToPrevious}
-          className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft className="h-6 w-6 text-foreground" />
-        </button>
-
-        {/* Dots Indicator */}
-        <div className="flex space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? 'w-8 bg-primary'
-                  : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={goToNext}
-          className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-          aria-label="Next testimonial"
-        >
-          <ChevronRight className="h-6 w-6 text-foreground" />
-        </button>
+      {/* Dot Indicators */}
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all ${
+              index === currentIndex 
+                ? 'w-8 bg-primary' 
+                : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

@@ -116,7 +116,6 @@ const Index = () => {
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                 </div>
                 <CardHeader className="flex-1">
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -144,9 +143,7 @@ const Index = () => {
             <Card className="border-2 border-primary/20">
               <CardContent className="pt-6">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Target className="h-8 w-8 text-primary" />
-                  </div>
+                  <Target className="h-8 w-8 text-primary flex-shrink-0" />
                   <h2 className="text-2xl font-bold text-foreground">{t('mission.title')}</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed">{t('mission.text')}</p>
@@ -155,9 +152,7 @@ const Index = () => {
             <Card className="border-2 border-accent/20">
               <CardContent className="pt-6">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="h-16 w-16 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <Eye className="h-8 w-8 text-accent" />
-                  </div>
+                  <Eye className="h-8 w-8 text-accent flex-shrink-0" />
                   <h2 className="text-2xl font-bold text-foreground">{t('vision.title')}</h2>
                 </div>
                 <p className="text-foreground/80 leading-relaxed">{t('vision.text')}</p>
@@ -181,11 +176,10 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => {
               const IconComponent = value.icon;
-              const iconColor = index < 3 ? 'text-brand-yellow' : 'text-primary';
               return (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
-                    <IconComponent className={`h-10 w-10 mb-4 ${iconColor}`} />
+                    <IconComponent className="h-10 w-10 mb-4 text-primary" />
                     <h3 className="text-xl font-semibold mb-3 text-foreground">
                       {value.title}
                     </h3>
@@ -207,9 +201,11 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               {t('team.title')}
             </h2>
-            <p className="text-lg text-muted-foreground">{t('team.subtitle')}</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t('team.subtitle')}</p>
           </div>
-          <TestimonialCarousel />
+          <div className="max-w-5xl mx-auto">
+            <TestimonialCarousel />
+          </div>
         </div>
       </section>
 
