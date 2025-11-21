@@ -22,6 +22,11 @@ const Jobs = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               {language === 'fr' ? 'Pourquoi nous rejoindre ?' : 'Why Join Us?'}
             </h2>
+            <p className="text-lg text-muted-foreground">
+              {language === 'fr'
+                ? "Rejoignez une équipe d'ingénieurs passionnés où l'excellence technique rencontre l'innovation. Chez Tagrant, nous offrons des opportunités de croissance professionnelle sur des projets d'envergure, un environnement collaboratif qui valorise l'expertise de chacun, et la chance de façonner l'avenir des infrastructures. Que vous soyez ingénieur expérimenté ou jeune diplômé, venez contribuer à des projets qui font la différence."
+                : "Join a team of passionate engineers where technical excellence meets innovation. At Tagrant, we offer professional growth opportunities on large-scale projects, a collaborative environment that values everyone's expertise, and the chance to shape the future of infrastructure. Whether you're an experienced engineer or recent graduate, come contribute to projects that make a difference."}
+            </p>
           </div>
         </div>
       </section>
