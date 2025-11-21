@@ -61,7 +61,7 @@ export const HeroCarousel = () => {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 z-10" />
           <img
             src={slide.image}
             alt="Engineering infrastructure"

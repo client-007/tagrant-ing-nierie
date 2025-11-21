@@ -23,7 +23,7 @@ const Contact = () => {
       <Navigation />
 
       {/* Contact Form & Info */}
-      <section className="py-16 mt-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Contact Information */}
@@ -99,7 +99,7 @@ const Contact = () => {
                 <CardContent>
                   <div className="aspect-video w-full rounded-md overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2116432827893!2d2.3048617!3d48.8707088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fec70fb1a5d%3A0x40b82c3688c9460!2sChamps-%C3%89lys%C3%A9es%2C%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2088645937553!2d2.3048617!3d48.8707088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fec95820111%3A0x7c1c7c1c7c1c7c1c!2s123%20Avenue%20des%20Champs-%C3%89lys%C3%A9es%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1234567890"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
