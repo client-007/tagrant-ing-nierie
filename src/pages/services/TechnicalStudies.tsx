@@ -10,21 +10,61 @@ import serviceStudies from '@/assets/service-studies.jpg';
 const TechnicalStudies = () => {
   const { language } = useLanguage();
 
-  const capabilities =
+  const studyServices =
     language === 'fr'
       ? [
-          'Calculs structurels & vérifications',
-          'Modélisation CAO/BIM (AutoCAD, Revit)',
-          'Gestion des études d\'exécution',
-          'Coordination conception-chantier',
-          'Interface de support géotechnique',
+          'Calculs de structure : dimensionnement et vérifications selon les normes en vigueur.',
+          'Pilotage des études d\'exécution : organisation des livrables, suivi des délais et conformité technique.',
+          'Coordination études-travaux : garantie de cohérence entre études et mise en œuvre, suivi des interfaces et retours opérationnels.',
+          'Interface GC / fondations spéciales : définition des liaisons structure-fondation et arbitrages techniques.',
+          'Appui géotechnique opérationnel : exploitation des études géotechniques, validation des hypothèses et recommandations constructives.',
+          'Comparaison de scénarios et assistance à la décision : options planning, coût et risques pour appuyer les choix du projet.',
+          'Gestion administrative : constitution du dossier CERFA et assistance au dépôt de permis si nécessaire.',
         ]
       : [
-          'Structural calculations & verifications',
-          'CAD/BIM modeling (AutoCAD, Revit)',
-          'Execution study management',
-          'Design-to-works coordination',
-          'Geotechnical support interface',
+          'Structural calculations: sizing and verifications according to applicable standards.',
+          'Execution study management: deliverable organisation, schedule tracking and technical compliance.',
+          'Design-to-works coordination: ensure consistency between studies and on-site implementation, manage interfaces and operational feedback.',
+          'Main contractor / special foundations interface: define structure-foundation interfaces and make technical trade-offs.',
+          'Operational geotechnical support: interpret geotechnical studies, validate assumptions and provide constructive recommendations.',
+          'Scenario comparison and decision support: planning, cost and risk options to inform project choices.',
+          'Administrative support: preparation of CERFA dossiers and assistance with permit submissions if required.',
+        ];
+
+  const cadServices =
+    language === 'fr'
+      ? [
+          'Plans 2D complets : plan de masse, plans de coupe, façades, niveaux (formats DWG / PDF).',
+          'Maquettes 3D réalistes (Revit / IFC) : modélisation pour visualisation, coordination et intégration BIM.',
+        ]
+      : [
+          'Complete 2D drawings: site plan, sections, elevations, levels (DWG / PDF formats).',
+          'Realistic 3D models (Revit / IFC): modelling for visualization, coordination and BIM integration.',
+        ];
+
+  const tools =
+    language === 'fr'
+      ? 'FARO SCENE, Revit, AutoCAD, Recap, Covadis, Mensura, MS Project, Excel.'
+      : 'FARO SCENE, Revit, AutoCAD, Recap, Covadis, Mensura, MS Project, Excel.';
+
+  const deliverables =
+    language === 'fr'
+      ? 'Plans 2D, maquettes 3D, rapports de calcul, fiches méthode, scénarios comparatifs, dossier CERFA, reporting d\'avancement.'
+      : '2D drawings, 3D models, calculation reports, method sheets, comparative scenarios, CERFA dossiers, progress reporting.';
+
+  const benefits =
+    language === 'fr'
+      ? [
+          'Livrables prêts à l\'emploi en BIM ou pour exécution',
+          'Meilleure coordination entre études et exécution',
+          'Réduction des risques de reprise et optimisation des délais et coûts',
+          'Accompagnement technique et administratif complet, de l\'étude à la mise en œuvre',
+        ]
+      : [
+          'Ready-to-use BIM or execution deliverables',
+          'Improved coordination between design and construction',
+          'Reduced risk of rework and optimized schedule and cost',
+          'Full technical and administrative support from study to implementation',
         ];
 
   return (
@@ -56,28 +96,83 @@ const TechnicalStudies = () => {
       {/* Main Content */}
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-5xl">
+          {/* Overview */}
           <div className="prose prose-lg max-w-none mb-12">
             <h2 className="text-3xl font-bold mb-6 text-foreground">
-              {language === 'fr' ? 'Notre Expertise' : 'Our Expertise'}
+              {language === 'fr' ? 'Présentation' : 'Overview'}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {language === 'fr'
-                ? 'Nous fournissons de l\'ingénierie assistée par ordinateur de haute qualité centrée sur la qualité des études et la continuité entre bureaux de conception et d\'exécution. Notre approche garantit que vos projets sont réalisés avec précision et efficacité.'
-                : 'We deliver high-quality computer-aided engineering focused on study quality and continuity between design offices and execution. Our approach ensures your projects are executed with precision and efficiency.'}
+                ? 'TAGRANT INGENIERIE propose des prestations d\'ingénierie centrées sur la qualité des études et la continuité entre bureaux d\'études et exécution.'
+                : 'TAGRANT INGENIERIE delivers engineering services focused on study quality and continuity between design offices and execution.'}
             </p>
           </div>
 
-          {/* Key Capabilities */}
+          {/* Studies, Coordination & Geotechnical Support */}
           <Card className="mb-12">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                {language === 'fr' ? 'Capacités Clés' : 'Key Capabilities'}
+                {language === 'fr' ? 'Études, coordination & appui géotechnique' : 'Studies, Coordination & Geotechnical Support'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {capabilities.map((capability, index) => (
+              <div className="space-y-4">
+                {studyServices.map((service, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{capability}</span>
+                    <span className="text-foreground leading-relaxed">{service}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* CAD 2D/3D Models & Point-Cloud Modeling */}
+          <Card className="mb-12">
+            <CardContent className="pt-6">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                {language === 'fr' ? 'DAO 2D / Maquettes 3D & Modélisation depuis nuages de points' : 'CAD 2D / 3D Models & Point-Cloud Modeling'}
+              </h3>
+              <div className="space-y-4">
+                {cadServices.map((service, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground leading-relaxed">{service}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Tools & Deliverables */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  {language === 'fr' ? 'Outils' : 'Tools'}
+                </h3>
+                <p className="text-muted-foreground">{tools}</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  {language === 'fr' ? 'Livrables' : 'Deliverables'}
+                </h3>
+                <p className="text-muted-foreground">{deliverables}</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Client Value */}
+          <Card className="mb-12">
+            <CardContent className="pt-6">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
+                {language === 'fr' ? 'Valeur ajoutée pour le client' : 'Client Value'}
+              </h3>
+              <div className="space-y-3">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -91,8 +186,8 @@ const TechnicalStudies = () => {
             </h3>
             <p className="text-muted-foreground mb-8">
               {language === 'fr'
-                ? 'Demandez un devis pour vos besoins en études techniques.'
-                : 'Request a quote for your technical studies needs.'}
+                ? 'Pour une proposition sur-mesure (périmètre, formats, planning), contactez TAGRANT INGENIERIE.'
+                : 'For a tailored proposal (scope, deliverable formats, schedule), contact TAGRANT INGENIERIE.'}
             </p>
             <Button size="lg" className="bg-brand-yellow text-brand-navy hover:bg-brand-yellow/90 font-semibold" asChild>
               <Link to="/contact">
