@@ -97,19 +97,15 @@ const ViaductA2 = () => {
               <Building2 className="h-5 w-5" />
               <span className="text-lg">{content.client}</span>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Project Image */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <img 
-              src={projectImage} 
-              alt={content.title}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+            {/* Project Image */}
+            <div className="mt-8">
+              <img 
+                src={projectImage} 
+                alt={content.title}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
