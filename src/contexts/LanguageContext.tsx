@@ -47,6 +47,8 @@ const translations = {
     'services.inspection.desc': 'Diagnostics structurels, inspections non destructives et solutions de réparation conformes aux normes européennes',
     'services.training': 'Formation',
     'services.training.desc': 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques',
+    'services.professionalTraining': 'Formation Professionnelle',
+    'services.professionalTraining.desc': 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques',
     'services.learn': 'En savoir plus',
     
     // Mission & Vision
@@ -142,6 +144,8 @@ const translations = {
     'services.inspection.desc': 'Structural diagnostics, non-destructive testing and repair solutions compliant with European standards',
     'services.training': 'Training',
     'services.training.desc': 'Professional training programs in engineering, project management and digital tools',
+    'services.professionalTraining': 'Professional Training',
+    'services.professionalTraining.desc': 'Professional training programs in engineering, project management and digital tools',
     'services.learn': 'Learn More',
     
     // Mission & Vision

@@ -96,7 +96,7 @@ const Services = () => {
       icon: GraduationCap,
       title: language === 'fr' ? 'Formation Professionnelle' : 'Professional Training',
       image: serviceTraining,
-      link: '/services/training',
+      link: '/services/professional-training',
       description:
         language === 'fr'
           ? 'Programmes de formation en ingénierie complets conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
@@ -124,22 +124,11 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('services.title')}</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-95">
-            {language === 'fr'
-              ? 'Des solutions d\'ingénierie complètes pour vos projets d\'infrastructure'
-              : 'Comprehensive engineering solutions for your infrastructure projects'}
-          </p>
-        </div>
-      </section>
 
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {services.map((service, index) => {
               return (
                 <Card
@@ -178,7 +167,7 @@ const Services = () => {
                       asChild
                     >
                       <Link to={service.link}>
-                        {language === 'fr' ? 'Demander plus d\'informations' : 'Request More Information'}
+                        {language === 'fr' ? 'En savoir plus' : 'Learn More'}
                       </Link>
                     </Button>
                   </CardContent>
