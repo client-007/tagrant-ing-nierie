@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import heroSlide1 from '@/assets/hero-slide-1.jpg';
 import heroSlide2 from '@/assets/hero-slide-2.jpg';
 import heroSlide3 from '@/assets/hero-slide-3.jpg';
@@ -77,7 +77,6 @@ export const HeroCarousel = () => {
             <Button size="lg" variant="secondary" asChild>
               <Link to={slide.cta.link}>
                 {slide.cta.text}
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>

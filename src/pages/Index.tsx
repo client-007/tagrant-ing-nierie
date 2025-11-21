@@ -35,10 +35,10 @@ const Index = () => {
       link: '/services/inspection',
     },
     {
-      title: t('services.training'),
-      description: t('services.training.desc'),
+      title: t('services.professionalTraining'),
+      description: t('services.professionalTraining.desc'),
       image: serviceTraining,
-      link: '/services/training',
+      link: '/services/professional-training',
     },
   ];
 
