@@ -36,9 +36,9 @@ const Projects = () => {
       <Navigation />
 
       {/* Title Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground max-w-5xl mx-auto leading-tight">
+          <h1 className="text-xl md:text-2xl font-medium text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             {language === 'fr'
               ? 'Découvrez comment notre équipe applique précision technique et innovation à travers divers projets d\'infrastructure en France'
               : 'Discover how our team applies engineering precision and innovation across diverse infrastructure projects in France'}
