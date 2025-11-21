@@ -87,6 +87,7 @@ const translations = {
     'footer.follow': 'Suivez-nous',
     'footer.rights': 'Tous droits réservés.',
     'footer.address': 'Adresse',
+    'footer.address.full': '123 Avenue des Champs-Élysées, Paris, France',
     'footer.email': 'Email',
     'footer.phone': 'Téléphone',
     
@@ -181,6 +182,7 @@ const translations = {
     'footer.follow': 'Follow Us',
     'footer.rights': 'All rights reserved.',
     'footer.address': 'Address',
+    'footer.address.full': '123 Avenue des Champs-Élysées, Paris, France',
     'footer.email': 'Email',
     'footer.phone': 'Phone',
     

@@ -93,7 +93,7 @@ export const TestimonialCarousel = () => {
               href={currentTestimonial.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors"
+              className="text-primary hover:text-brand-yellow active:text-brand-yellow transition-colors"
               aria-label="Connect on LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
