@@ -22,17 +22,29 @@ const Jobs = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               {language === 'fr' ? 'Pourquoi nous rejoindre ?' : 'Why Join Us?'}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              {language === 'fr'
-                ? 'Nous n\'avons actuellement aucun poste ouvert. Cependant, nous acceptons les candidatures spontanées : CV, candidatures spontanées et demandes de stage/alternance. Veuillez soumettre votre CV et une brève lettre de motivation via le formulaire ci-dessous — nous conserverons vos coordonnées et vous contacterons si une opportunité appropriée se présente.'
-                : 'We currently don\'t have open positions. However, we welcome speculative applications: CVs, spontaneous applications, and inquiries for internships/alternance. Please submit your CV and a short cover note via the form below — we will keep your details and contact you if a suitable opportunity appears.'}
-            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* No Open Positions Message */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <Card className="bg-muted/30">
+              <CardContent className="pt-6">
+                <p className="text-center text-muted-foreground">
+                  {language === 'fr'
+                    ? 'Nous n\'avons actuellement aucun poste ouvert. Cependant, nous acceptons les candidatures spontanées : CV, candidatures spontanées et demandes de stage/alternance. Veuillez soumettre votre CV et une lettre de motivation via le formulaire ci-dessous — nous conserverons vos coordonnées et vous contacterons si une opportunité appropriée se présente.'
+                    : 'We currently don\'t have any open positions. However, we welcome speculative applications: CVs, spontaneous applications, and inquiries for internships/alternance. Please submit your CV and a cover letter via the form below — we will keep your details and contact you if a suitable opportunity arises.'}
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Application Form */}
-      <section className="py-16">
+      <section className="py-8 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <Card>
@@ -107,7 +119,7 @@ const Jobs = () => {
                   {/* Cover Letter */}
                   <div className="space-y-2">
                     <Label htmlFor="coverLetter">
-                      {language === 'fr' ? 'Lettre de motivation (optionnel)' : 'Cover Letter (optional)'}
+                      {language === 'fr' ? 'Lettre de motivation' : 'Cover Letter'} <span className="text-destructive">*</span>
                     </Label>
                     <Textarea
                       id="coverLetter"
@@ -117,22 +129,7 @@ const Jobs = () => {
                           : 'Tell us about your experience and motivation...'
                       }
                       rows={6}
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <Label htmlFor="message">
-                      {language === 'fr' ? 'Message (optionnel)' : 'Message (optional)'}
-                    </Label>
-                    <Textarea
-                      id="message"
-                      placeholder={
-                        language === 'fr'
-                          ? 'Informations complémentaires...'
-                          : 'Additional information...'
-                      }
-                      rows={4}
+                      required
                     />
                   </div>
 
