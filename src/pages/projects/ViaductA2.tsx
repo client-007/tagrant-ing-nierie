@@ -97,15 +97,6 @@ const ViaductA2 = () => {
               <Building2 className="h-5 w-5" />
               <span className="text-lg">{content.client}</span>
             </div>
-
-            {/* Project Image */}
-            <div className="mt-8">
-              <img 
-                src={projectImage} 
-                alt={content.title}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -174,6 +165,15 @@ const ViaductA2 = () => {
                 </p>
               </CardContent>
             </Card>
+
+            {/* Project Image Gallery */}
+            <div className="mt-8">
+              <img 
+                src={projectImage} 
+                alt={content.title}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
