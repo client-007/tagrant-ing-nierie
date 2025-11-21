@@ -22,11 +22,6 @@ const Jobs = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               {language === 'fr' ? 'Pourquoi nous rejoindre ?' : 'Why Join Us?'}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              {language === 'fr'
-                ? 'Nous n\'avons actuellement aucun poste ouvert. Cependant, nous acceptons les candidatures spontanées : CV, candidatures spontanées et demandes de stage/alternance. Veuillez soumettre votre CV et une lettre de motivation via le formulaire ci-dessous — nous conserverons vos coordonnées et vous contacterons si une opportunité appropriée se présente.'
-                : 'We currently don\'t have any open positions. However, we welcome speculative applications: CVs, spontaneous applications, and inquiries for internships/alternance. Please submit your CV and a cover letter via the form below — we will keep your details and contact you if a suitable opportunity arises.'}
-            </p>
           </div>
         </div>
       </section>
