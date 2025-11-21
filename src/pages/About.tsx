@@ -2,7 +2,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog } from 'lucide-react';
+import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog, Heart, Zap } from 'lucide-react';
 
 const About = () => {
   const { t, language } = useLanguage();
@@ -12,7 +12,8 @@ const About = () => {
     { icon: Target, title: t('values.excellence'), description: t('values.excellence.desc') },
     { icon: Users, title: t('values.collaboration'), description: t('values.collaboration.desc') },
     { icon: Lightbulb, title: t('values.innovation'), description: t('values.innovation.desc') },
-    { icon: CheckCircle2, title: t('values.sustainability'), description: t('values.sustainability.desc') },
+    { icon: Heart, title: t('values.sustainability'), description: t('values.sustainability.desc') },
+    { icon: Zap, title: t('values.agility'), description: t('values.agility.desc') },
   ];
 
   const strengths = [

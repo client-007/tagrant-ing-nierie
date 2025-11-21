@@ -9,7 +9,7 @@ import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { ArrowRight, Shield, Award, Users, Lightbulb, Heart, Zap, Target, Eye } from 'lucide-react';
 import serviceProject from '@/assets/service-project.jpg';
 import serviceStudies from '@/assets/service-studies.jpg';
-import serviceInspection from '@/assets/service-inspection.jpg';
+import serviceInspection from '@/assets/service-inspection-engineer.jpg';
 import serviceTraining from '@/assets/service-training.jpg';
 
 const Index = () => {
@@ -110,7 +110,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[4/3.3] overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -125,7 +125,7 @@ const Index = () => {
                 <CardContent className="pt-0">
                   <Link 
                     to={service.link}
-                    className="inline-flex items-center text-primary hover:text-brand-yellow transition-colors font-medium group/link"
+                    className="inline-flex items-center text-primary group-hover:text-brand-yellow transition-colors font-medium group/link"
                   >
                     {t('services.learn')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
@@ -141,30 +141,34 @@ const Index = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-card rounded-lg p-8 flex flex-col shadow-sm">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="h-16 w-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Target className="h-8 w-8 text-primary" />
+            <Card className="border-2 border-primary/20">
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Target className="h-8 w-8 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">{t('mission.title')}</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-foreground">{t('mission.title')}</h2>
-              </div>
-              <p className="text-foreground/80 leading-relaxed">{t('mission.text')}</p>
-            </div>
-            <div className="bg-card rounded-lg p-8 flex flex-col shadow-sm">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="h-16 w-16 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Eye className="h-8 w-8 text-accent" />
+                <p className="text-foreground/80 leading-relaxed">{t('mission.text')}</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-accent/20">
+              <CardContent className="pt-6">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="h-16 w-16 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                    <Eye className="h-8 w-8 text-accent" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">{t('vision.title')}</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-foreground">{t('vision.title')}</h2>
-              </div>
-              <p className="text-foreground/80 leading-relaxed">{t('vision.text')}</p>
-            </div>
+                <p className="text-foreground/80 leading-relaxed">{t('vision.text')}</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -174,32 +178,22 @@ const Index = () => {
               {t('values.subtitle')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => {
               const IconComponent = value.icon;
               const iconColor = index < 3 ? 'text-brand-yellow' : 'text-primary';
-              const borderColor = index < 3 ? 'border-brand-yellow' : 'border-primary';
               return (
-                <div 
-                  key={index} 
-                  className={`bg-card border-2 ${borderColor} rounded-lg p-6 hover:shadow-md transition-shadow`}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-16 w-16 rounded-full border-2 border-current flex items-center justify-center">
-                        <IconComponent className={`h-8 w-8 ${iconColor}`} />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2 text-foreground">
-                        {value.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardContent className="pt-6">
+                    <IconComponent className={`h-10 w-10 mb-4 ${iconColor}`} />
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
               );
             })}
           </div>
@@ -220,14 +214,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy to-primary opacity-90" />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               {t('cta.title')}
             </h2>
-            <p className="text-lg mb-8 opacity-95">
+            <p className="text-lg mb-8 text-muted-foreground">
               {t('cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -241,7 +234,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="bg-transparent text-white border-white hover:bg-white/10"
+                className="border-primary text-primary hover:bg-primary/10"
                 asChild
               >
                 <Link to="/services">{t('cta.services')}</Link>
