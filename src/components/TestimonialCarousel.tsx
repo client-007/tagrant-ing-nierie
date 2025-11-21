@@ -107,36 +107,41 @@ export const TestimonialCarousel = () => {
         </CardContent>
       </Card>
 
-      {/* Navigation Buttons */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/90 hover:bg-background p-3 rounded-full shadow-lg transition-all z-10"
-        aria-label="Previous testimonial"
-      >
-        <ChevronLeft className="h-6 w-6 text-foreground" />
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/90 hover:bg-background p-3 rounded-full shadow-lg transition-all z-10"
-        aria-label="Next testimonial"
-      >
-        <ChevronRight className="h-6 w-6 text-foreground" />
-      </button>
+      {/* Dot Indicators with Navigation Buttons */}
+      <div className="flex justify-center items-center gap-4 mt-6">
+        {/* Previous Button */}
+        <button
+          onClick={goToPrevious}
+          className="bg-background/90 hover:bg-background p-2 rounded-full shadow-lg transition-all"
+          aria-label="Previous testimonial"
+        >
+          <ChevronLeft className="h-5 w-5 text-foreground" />
+        </button>
 
-      {/* Dot Indicators */}
-      <div className="flex justify-center gap-2 mt-6">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentIndex 
-                ? 'w-8 bg-primary' 
-                : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-            }`}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
+        {/* Dot Indicators */}
+        <div className="flex gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === currentIndex 
+                  ? 'w-8 bg-primary' 
+                  : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={goToNext}
+          className="bg-background/90 hover:bg-background p-2 rounded-full shadow-lg transition-all"
+          aria-label="Next testimonial"
+        >
+          <ChevronRight className="h-5 w-5 text-foreground" />
+        </button>
       </div>
     </div>
   );
