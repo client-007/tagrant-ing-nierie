@@ -16,47 +16,107 @@ const Services = () => {
   const services = [
     {
       icon: FolderKanban,
-      title: t('services.project'),
-      description: t('services.project.desc'),
+      title: language === 'fr' ? 'Gestion de Projet' : 'Project Management',
       image: serviceProject,
       link: '/services/project-management',
-      details:
+      description:
         language === 'fr'
-          ? 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings, les méthodes et la livraison des projets.'
-          : 'Operational support in civil engineering and infrastructure to secure schedules, methods and project delivery.',
+          ? 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings, les méthodes et la livraison des projets. Nous fournissons un support de projet intégré sur site pour transformer les études en solutions immédiatement réalisables.'
+          : 'Operational support in civil engineering and infrastructure to secure schedules, methods and project delivery. We provide integrated on-site project support, operating at the heart of the site to transform studies into immediately implementable solutions.',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Analyse de variance des plannings',
+              'Expertise des méthodes d\'exécution',
+              'Opérations sur sites occupés',
+              'Comparaison de scénarios et support aux décisions',
+              'Gestion des réclamations contractuelles',
+            ]
+          : [
+              'Schedule variance analysis',
+              'Execution methods expertise',
+              'Operations on occupied sites',
+              'Scenario comparison & decision support',
+              'Contractual claims management',
+            ],
     },
     {
       icon: FileText,
-      title: t('services.studies'),
-      description: t('services.studies.desc'),
+      title: language === 'fr' ? 'Études Techniques & Coordination' : 'Technical Studies & Coordination',
       image: serviceStudies,
       link: '/services/technical-studies',
-      details:
+      description:
         language === 'fr'
-          ? 'Études d\'exécution, coordination BIM et synthèse technique pour vos projets d\'infrastructure.'
-          : 'Execution studies, BIM coordination and technical synthesis for your infrastructure projects.',
+          ? 'Études techniques fiables et modélisation précise pour assurer le succès de vos projets d\'ingénierie civile et d\'infrastructure. Nous fournissons de l\'ingénierie assistée par ordinateur de haute qualité centrée sur la qualité des études et la continuité entre bureaux de conception et d\'exécution.'
+          : 'Reliable technical studies and precise modeling to ensure the success of your civil engineering and infrastructure projects. We deliver high-quality computer-aided engineering focused on study quality and continuity between design offices and execution.',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Calculs structurels & vérifications',
+              'Modélisation CAO/BIM (AutoCAD, Revit)',
+              'Gestion des études d\'exécution',
+              'Coordination conception-chantier',
+              'Interface de support géotechnique',
+            ]
+          : [
+              'Structural calculations & verifications',
+              'CAD/BIM modeling (AutoCAD, Revit)',
+              'Execution study management',
+              'Design-to-works coordination',
+              'Geotechnical support interface',
+            ],
     },
     {
       icon: Wrench,
-      title: t('services.inspection'),
-      description: t('services.inspection.desc'),
+      title: language === 'fr' ? 'Inspection, Maintenance & Réparation' : 'Inspection, Maintenance & Repair',
       image: serviceInspection,
       link: '/services/inspection',
-      details:
+      description:
         language === 'fr'
-          ? 'Services de diagnostic avancés pour les structures en béton et en acier pour évaluer la sécurité, la durabilité et la performance.'
-          : 'Advanced diagnostic services for concrete and steel structures to assess safety, durability, and performance.',
+          ? 'Services de diagnostic avancés pour les structures en béton et en acier pour évaluer la sécurité, la durabilité et la performance. Nous fournissons des rapports précis et basés sur les données qui soutiennent la planification des réparations et assurent la conformité aux normes européennes.'
+          : 'Advanced diagnostic services for concrete and steel structures to assess safety, durability, and performance. We deliver accurate, data-driven reports that support repair planning and ensure compliance with European standards.',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Tests non destructifs (NDT)',
+              'Modélisation par éléments finis',
+              'Inspections visuelles basées sur drones',
+              'Numérisation laser 3D',
+              'Conformité avec EN 1992, EN 1993, EN 1504',
+            ]
+          : [
+              'Non-destructive testing (NDT)',
+              'Finite Element Modeling',
+              'Drone-based visual inspections',
+              '3D laser scanning',
+              'Compliance with EN 1992, EN 1993, EN 1504',
+            ],
     },
     {
       icon: GraduationCap,
-      title: t('services.training'),
-      description: t('services.training.desc'),
+      title: language === 'fr' ? 'Formation Professionnelle' : 'Professional Training',
       image: serviceTraining,
       link: '/services/training',
-      details:
+      description:
         language === 'fr'
-          ? 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques.'
-          : 'Professional training programs in engineering, project management and digital tools.',
+          ? 'Programmes de formation en ingénierie complets conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
+          : 'Comprehensive engineering training programs designed to develop technical skills and professional expertise. Our training bridges the gap between theory and practice, empowering engineers and teams to excel in their roles.',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Développement de compétences techniques',
+              'Formation en gestion de projet',
+              'Outils logiciels & numériques',
+              'Normes de sécurité et qualité',
+              'Support de certification professionnelle',
+            ]
+          : [
+              'Technical skills development',
+              'Project management training',
+              'Software & digital tools',
+              'Safety & quality standards',
+              'Professional certification support',
+            ],
     },
   ];
 
@@ -81,40 +141,44 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => {
-              const Icon = service.icon;
               return (
                 <Card
                   key={index}
-                  className="overflow-hidden hover:shadow-xl transition-all border-2 hover:border-primary/50"
+                  className="overflow-hidden hover:shadow-xl transition-all border flex flex-col"
                 >
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardHeader className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                        <CardDescription className="text-base leading-relaxed">
-                          {service.details}
-                        </CardDescription>
-                      </div>
-                    </div>
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed text-foreground">
+                      {service.description}
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-1 flex flex-col justify-between">
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">
+                        {language === 'fr' ? 'Capacités clés:' : 'Key Capabilities:'}
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.capabilities.map((capability, capIndex) => (
+                          <li key={capIndex} className="flex items-start">
+                            <span className="text-primary mr-2 mt-1">•</span>
+                            <span className="text-sm text-muted-foreground">{capability}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     <Button 
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
                       asChild
                     >
                       <Link to={service.link}>
-                        {t('services.learn')}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        {language === 'fr' ? 'Demander plus d\'informations' : 'Request More Information'}
                       </Link>
                     </Button>
                   </CardContent>

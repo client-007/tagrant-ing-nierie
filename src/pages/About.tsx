@@ -34,10 +34,17 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              {language === 'fr' ? 'À propos de nous' : 'About Us'}
+              {language === 'fr' ? 'Qui sommes-nous' : 'Who We Are'}
             </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              {language === 'fr' 
+                ? "Tagrant Ingénierie est un cabinet d'ingénierie spécialisé fondé pour combler le fossé entre précision technique et excellence opérationnelle. Nous sommes spécialisés dans la gestion de projets de génie civil, la coordination technique, le diagnostic structurel et la formation professionnelle."
+                : "Tagrant Ingénierie is a specialized engineering firm founded to bridge the gap between technical precision and operational excellence. We specialize in civil engineering project management, technical coordination, structural diagnostics, and professional training."}
+            </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('overview.description')}
+              {language === 'fr'
+                ? "Notre équipe multidisciplinaire rassemble des ingénieurs expérimentés, des chefs de projet et des spécialistes techniques engagés à fournir des solutions d'infrastructure durables dans toute la France."
+                : "Our multidisciplinary team brings together experienced engineers, project managers, and technical specialists committed to delivering sustainable infrastructure solutions throughout France."}
             </p>
           </div>
         </div>

@@ -28,7 +28,7 @@ export const HeroCarousel = () => {
       image: heroSlide3,
       title: t('hero.slide3.title'),
       subtitle: t('hero.slide3.subtitle'),
-      cta: { text: t('hero.quote'), link: '/contact' },
+      cta: { text: t('services.learn'), link: '/services/inspection' },
     },
   ];
 
