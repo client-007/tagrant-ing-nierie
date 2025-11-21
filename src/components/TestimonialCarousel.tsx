@@ -60,24 +60,19 @@ export const TestimonialCarousel = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-card rounded-lg p-8 md:p-12 shadow-sm">
+      <div className="bg-card rounded-lg p-8 md:p-12 shadow-sm border border-border">
         <div className="flex flex-col items-center text-center">
           {/* Avatar */}
-          <Avatar className="h-24 w-24 mb-6">
+          <Avatar className="h-32 w-32 mb-6 ring-4 ring-primary/10">
             <AvatarImage src={currentTestimonial.image} alt={currentTestimonial.name} />
-            <AvatarFallback className="text-xl font-semibold bg-primary text-primary-foreground">
+            <AvatarFallback className="text-2xl font-semibold bg-primary text-primary-foreground">
               {currentTestimonial.initial}
             </AvatarFallback>
           </Avatar>
 
-          {/* Quote */}
-          <blockquote className="text-lg md:text-xl text-foreground/90 mb-6 italic leading-relaxed">
-            "{currentTestimonial.quote}"
-          </blockquote>
-
           {/* Name and Role */}
-          <div className="mb-4">
-            <p className="text-lg font-semibold text-foreground mb-1">
+          <div className="mb-2">
+            <p className="text-xl font-bold text-foreground mb-1">
               {currentTestimonial.name}
             </p>
             <p className="text-sm text-muted-foreground">
@@ -90,12 +85,16 @@ export const TestimonialCarousel = () => {
             href={currentTestimonial.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-primary hover:text-brand-yellow transition-colors group"
+            className="inline-flex items-center space-x-2 text-primary hover:text-brand-yellow transition-colors group mb-6"
             aria-label={`View ${currentTestimonial.name}'s LinkedIn profile`}
           >
             <Linkedin className="h-5 w-5 group-hover:text-brand-yellow transition-colors" />
-            <span className="text-sm font-medium">View LinkedIn Profile</span>
           </a>
+
+          {/* Quote */}
+          <blockquote className="text-base md:text-lg text-foreground/80 italic leading-relaxed">
+            "{currentTestimonial.quote}"
+          </blockquote>
         </div>
       </div>
 

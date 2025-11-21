@@ -74,7 +74,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm opacity-90">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span>Paris, France</span>
+                <span>123 Avenue des Champs-Élysées, Paris, France</span>
               </li>
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Mail className="h-5 w-5 flex-shrink-0" />

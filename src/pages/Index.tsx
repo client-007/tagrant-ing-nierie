@@ -110,7 +110,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -177,15 +177,17 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {values.map((value, index) => {
               const IconComponent = value.icon;
+              const iconColor = index < 3 ? 'text-brand-yellow' : 'text-primary';
+              const borderColor = index < 3 ? 'border-brand-yellow' : 'border-primary';
               return (
                 <div 
                   key={index} 
-                  className="bg-card border-l-4 border-primary rounded-lg p-6 hover:shadow-md transition-shadow"
+                  className={`bg-card border-2 ${borderColor} rounded-lg p-6 hover:shadow-md transition-shadow`}
                 >
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-lg bg-brand-yellow flex items-center justify-center">
-                        <IconComponent className="h-6 w-6 text-brand-navy" />
+                      <div className="h-16 w-16 rounded-full border-2 border-current flex items-center justify-center">
+                        <IconComponent className={`h-8 w-8 ${iconColor}`} />
                       </div>
                     </div>
                     <div>
