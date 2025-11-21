@@ -60,52 +60,50 @@ export const TestimonialCarousel = () => {
 
   return (
     <div className="relative">
-      <Card className="overflow-hidden border-2">
-        <CardContent className="p-0">
-          <div className="grid md:grid-cols-2 gap-0">
-            {/* Image Side */}
-            <div className="relative aspect-square md:aspect-auto">
-              <img 
-                src={currentTestimonial.image} 
-                alt={currentTestimonial.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Content Side */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <div className="space-y-6">
-                {/* Quote */}
-                <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed italic">
-                  "{currentTestimonial.quote}"
-                </blockquote>
-
-                {/* Author Info */}
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    {currentTestimonial.name}
-                  </h3>
-                  <p className="text-lg text-muted-foreground">
-                    {currentTestimonial.role}
-                  </p>
-                  <p className="text-md text-muted-foreground/80">
-                    {currentTestimonial.company}
-                  </p>
-                </div>
-
-                {/* LinkedIn */}
-                <a
-                  href={currentTestimonial.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="text-sm font-medium">Connect on LinkedIn</span>
-                </a>
+      <Card className="border-2">
+        <CardContent className="p-8 md:p-12">
+          {/* Header with Photo, Name, and LinkedIn */}
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex items-center gap-4">
+              {/* Circular Photo */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={currentTestimonial.image} 
+                  alt={currentTestimonial.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+              </div>
+              
+              {/* Name and Title */}
+              <div>
+                <h3 className="text-xl font-bold text-foreground">
+                  {currentTestimonial.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {currentTestimonial.role}
+                </p>
+                <p className="text-sm text-muted-foreground/80">
+                  {currentTestimonial.company}
+                </p>
               </div>
             </div>
+
+            {/* LinkedIn Icon */}
+            <a
+              href={currentTestimonial.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors"
+              aria-label="Connect on LinkedIn"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
           </div>
+
+          {/* Quote */}
+          <blockquote className="text-muted-foreground leading-relaxed italic">
+            "{currentTestimonial.quote}"
+          </blockquote>
         </CardContent>
       </Card>
 
