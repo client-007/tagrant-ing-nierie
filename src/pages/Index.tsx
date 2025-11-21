@@ -83,7 +83,7 @@ const Index = () => {
       <HeroCarousel />
 
       {/* Company Overview */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-8 md:px-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">

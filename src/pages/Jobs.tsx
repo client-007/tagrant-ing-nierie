@@ -42,22 +42,8 @@ const Jobs = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {language === 'fr' ? 'Carrières' : 'Careers'}
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-95">
-            {language === 'fr'
-              ? 'Rejoignez une équipe d\'experts passionnés par l\'ingénierie et l\'innovation'
-              : 'Join a team of experts passionate about engineering and innovation'}
-          </p>
-        </div>
-      </section>
-
       {/* Why Join Us */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 mt-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -65,43 +51,9 @@ const Jobs = () => {
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               {language === 'fr'
-                ? 'Chez TAGRANT INGENIERIE, nous croyons que nos employés sont notre plus grande force. Nous offrons un environnement de travail stimulant où l\'innovation, l\'apprentissage continu et le développement professionnel sont encouragés.'
-                : 'At TAGRANT INGENIERIE, we believe that our employees are our greatest strength. We offer a stimulating work environment where innovation, continuous learning and professional development are encouraged.'}
+                ? 'Nous n\'avons actuellement aucun poste ouvert. Cependant, nous acceptons les candidatures spontanées : CV, candidatures spontanées et demandes de stage/alternance. Veuillez soumettre votre CV et une brève lettre de motivation via le formulaire de contact ou la page Emplois - nous conserverons vos coordonnées et vous contacterons si une opportunité appropriée se présente.'
+                : 'We currently don\'t have open positions. However, we welcome speculative applications: CVs, spontaneous applications, and inquiries for internships/alternance. Please submit your CV and a short cover note via the contact form or the Jobs page — we will keep your details and contact you if a suitable opportunity appears.'}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Job Listings */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {language === 'fr' ? 'Postes ouverts' : 'Open Positions'}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {jobs.map((job, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-xl">{job.title}</CardTitle>
-                  <CardDescription className="space-y-2">
-                    <div className="flex items-center text-sm">
-                      <MapPin className="h-4 w-4 mr-2 text-primary" />
-                      {job.location}
-                    </div>
-                    <div className="flex items-center text-sm">
-                      <Briefcase className="h-4 w-4 mr-2 text-primary" />
-                      {job.type}
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{job.description}</p>
-                  <Button className="w-full">
-                    {language === 'fr' ? 'Postuler' : 'Apply Now'}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

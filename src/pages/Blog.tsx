@@ -51,21 +51,17 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Blog</h1>
-          <p className="text-xl max-w-3xl mx-auto opacity-95">
-            {language === 'fr'
-              ? 'Actualités, insights et expertise en ingénierie et gestion de projets'
-              : 'News, insights and expertise in engineering and project management'}
-          </p>
-        </div>
-      </section>
-
       {/* Blog Posts */}
-      <section className="py-16">
+      <section className="py-16 mt-16">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              {language === 'fr'
+                ? 'Actualités, insights et expertise en ingénierie et gestion de projets'
+                : 'News, insights and expertise in engineering and project management'}
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {blogPosts.map((post, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">

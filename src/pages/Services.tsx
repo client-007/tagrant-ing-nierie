@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, FolderKanban, FileText, Wrench, GraduationCap } from 'lucide-react';
 import serviceProject from '@/assets/service-project.jpg';
 import serviceStudies from '@/assets/service-studies.jpg';
-import serviceInspection from '@/assets/service-inspection.jpg';
+import serviceInspection from '@/assets/service-inspection-engineer.jpg';
 import serviceTraining from '@/assets/service-training.jpg';
 
 const Services = () => {
