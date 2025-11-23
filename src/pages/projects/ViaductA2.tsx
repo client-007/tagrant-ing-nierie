@@ -193,11 +193,11 @@ const ViaductA2 = () => {
                       className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg h-full">
                     <img 
                       src={bridge2} 
                       alt={`${content.title} - Bridge view 2`}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
