@@ -178,11 +178,18 @@ const ViaductA2 = () => {
 
             {/* Project Image Gallery */}
             <div className="mt-8">
-              <img 
-                src={projectImage} 
-                alt={content.title}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+              <h3 className="text-2xl font-bold mb-6">
+                {language === 'fr' ? 'Galerie du projet' : 'Project Gallery'}
+              </h3>
+              <div className="grid grid-cols-1 gap-6">
+                <div className="relative overflow-hidden rounded-lg shadow-xl">
+                  <img 
+                    src={projectImage} 
+                    alt={content.title}
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

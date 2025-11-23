@@ -109,28 +109,27 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col">
-                <div className="relative aspect-[4/3.3] overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader className="flex-1">
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <Link 
-                    to={service.link}
-                    className="inline-flex items-center text-primary group-hover:text-brand-yellow transition-colors font-medium group/link"
-                  >
-                    {t('services.learn')}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </CardContent>
-              </Card>
+              <Link key={index} to={service.link} className="block">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full cursor-pointer">
+                  <div className="relative aspect-[4/3.3] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardHeader className="flex-1">
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="inline-flex items-center text-primary group-hover:text-brand-yellow transition-colors font-medium group/link">
+                      {t('services.learn')}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

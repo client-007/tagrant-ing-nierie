@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -21,6 +23,17 @@ import ProfessionalTraining from "./pages/services/ProfessionalTraining";
 
 const queryClient = new QueryClient();
 
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -28,6 +41,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -39,6 +53,7 @@ const App = () => (
             <Route path="/expertise" element={<Projects />} />
             <Route path="/projects/viaduct-a2" element={<ViaductA2 />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<Blog />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/search" element={<SearchResults />} />
