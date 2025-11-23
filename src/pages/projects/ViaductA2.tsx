@@ -6,7 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Building2, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import projectImage from '@/assets/project-viaduct-a2.png';
+import bridge1 from '@/assets/project-viaduct-a2-bridge-1.jpg';
+import bridge2 from '@/assets/project-viaduct-a2-bridge-2.jpg';
 
 const ViaductA2 = () => {
   const { language } = useLanguage();
@@ -177,20 +178,31 @@ const ViaductA2 = () => {
             </Card>
 
             {/* Project Image Gallery */}
-            <div className="mt-8">
-              <h3 className="text-2xl font-bold mb-6">
-                {language === 'fr' ? 'Galerie du projet' : 'Project Gallery'}
-              </h3>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="relative overflow-hidden rounded-lg shadow-xl">
-                  <img 
-                    src={projectImage} 
-                    alt={content.title}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                  />
+            <Card>
+              <CardHeader>
+                <CardTitle>
+                  {language === 'fr' ? 'Galerie du projet' : 'Project Gallery'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src={bridge1} 
+                      alt={`${content.title} - Bridge view 1`}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="relative overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src={bridge2} 
+                      alt={`${content.title} - Bridge view 2`}
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
