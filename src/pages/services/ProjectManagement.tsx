@@ -14,8 +14,8 @@ const ProjectManagement = () => {
     language === 'fr'
       ? [
           'Analyse des écarts de planning : suivi de l\'avancement réel, identification des écarts et recommandations de mesures correctives applicables sur site.',
-          'Expertise méthodes d\'exécution (génie civil) : définition et optimisation des méthodes de travail et du phasage pour garantir sécurité, qualité et productivité.',
-          'Exploitation sur site occupé : mise en place de procédures, protections et interfaces avec les tiers pour maintenir une exploitation sûre et continue.',
+          'Expertise en méthodes d\'exécution (génie civil) : définition et optimisation des méthodes de travail et du phasage pour garantir sécurité, qualité et productivité.',
+          'Organisation travaux sur site occupé : mise en place de procédures, protections et interfaces avec les tiers pour maintenir une exploitation sûre et continue.',
           'Comparaison de scénarios : développement d\'options alternatives (planning, coût, risque) pour soutenir la prise de décision opérationnelle.',
           'Gestion des réclamations contractuelles : appui à la préparation, justification et suivi des demandes de prolongation/compensation.',
           'Aide à la décision : synthèses exécutives, recommandations étayées et outils pratiques pour des choix rapides et documentés.',

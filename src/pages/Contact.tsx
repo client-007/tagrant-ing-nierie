@@ -125,7 +125,7 @@ const Contact = () => {
                         {language === 'fr' ? 'Adresse' : 'Address'}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        123 Avenue des Champs-Élysées, Paris, France
+                        26 Rue Linois 75015 Paris
                       </p>
                     </div>
                   </div>
@@ -134,10 +134,10 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">Email</p>
                       <a
-                        href="mailto:contact@tagrant.fr"
+                        href="mailto:contact@tagrantingenierie.fr"
                         className="text-sm text-muted-foreground hover:text-primary"
                       >
-                        contact@tagrant.fr
+                        contact@tagrantingenierie.fr
                       </a>
                     </div>
                   </div>
@@ -148,10 +148,10 @@ const Contact = () => {
                         {language === 'fr' ? 'Téléphone' : 'Phone'}
                       </p>
                       <a
-                        href="tel:+33123456789"
+                        href="tel:+33183066796"
                         className="text-sm text-muted-foreground hover:text-primary"
                       >
-                        +33 1 23 45 67 89
+                        +33 1 83 06 67 96
                       </a>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                 <CardContent>
                   <div className="aspect-video w-full rounded-md overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2088645937553!2d2.3048617!3d48.8707088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fec95820111%3A0x7c1c7c1c7c1c7c1c!2s123%20Avenue%20des%20Champs-%C3%89lys%C3%A9es%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.4984774!2d2.2844!3d48.8489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701c9c7a3e53%3A0x0!2s26%20Rue%20Linois%2C%2075015%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1234567890"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}

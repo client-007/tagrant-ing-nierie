@@ -153,12 +153,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              {language === 'fr' ? 'Découvrez notre équipe' : 'Discover Our Team'}
+              {t('team.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {language === 'fr' 
-                ? 'Voix authentiques de professionnels sur LinkedIn' 
-                : 'Authentic voices from professionals on LinkedIn'}
+              {t('team.subtitle')}
             </p>
           </div>
           <div className="max-w-5xl mx-auto">

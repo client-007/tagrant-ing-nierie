@@ -13,22 +13,22 @@ const TechnicalStudies = () => {
   const studyServices =
     language === 'fr'
       ? [
-          'Calculs de structure : dimensionnement et vérifications selon les normes en vigueur.',
-          'Pilotage des études d\'exécution : organisation des livrables, suivi des délais et conformité technique.',
-          'Coordination études-travaux : garantie de cohérence entre études et mise en œuvre, suivi des interfaces et retours opérationnels.',
+          'Calculs de structure : dimensionnement et vérifications des structures en béton armé, des constructions métalliques et des fondations spéciales, conformément aux normes en vigueur.',
+          'Pilotage des études d\'exécution : organisation des documents d\'exécution selon le planning, pour livrer les dossiers BPE dans les délais et garantir leur conformité technique.',
+          'Coordination Etudes-Travaux : Organisation des flux de données d\'entrée et des interfaces pour limiter les risques, assurer la continuité des livrables et respecter les délais documentaires.',
           'Interface GC / fondations spéciales : définition des liaisons structure-fondation et arbitrages techniques.',
           'Appui géotechnique opérationnel : exploitation des études géotechniques, validation des hypothèses et recommandations constructives.',
           'Comparaison de scénarios et assistance à la décision : options planning, coût et risques pour appuyer les choix du projet.',
-          'Gestion administrative : constitution du dossier CERFA et assistance au dépôt de permis si nécessaire.',
+          'Gestion administrative : constitution du dossier CERFA et assistance au dépôt de permis si nécessaire. (Uniquement pour les constructions inférieures à 150 m².)',
         ]
       : [
-          'Structural calculations: sizing and verifications according to applicable standards.',
-          'Execution study management: deliverable organisation, schedule tracking and technical compliance.',
-          'Design-to-works coordination: ensure consistency between studies and on-site implementation, manage interfaces and operational feedback.',
+          'Structural calculations: sizing and verifications of reinforced concrete structures, steel constructions and special foundations, in accordance with applicable standards.',
+          'Execution study management: organization of execution documents according to the schedule, to deliver construction drawings on time and ensure their technical compliance.',
+          'Design-to-works coordination: Organization of input data flows and interfaces to limit risks, ensure continuity of deliverables and respect documentary deadlines.',
           'Main contractor / special foundations interface: define structure-foundation interfaces and make technical trade-offs.',
           'Operational geotechnical support: interpret geotechnical studies, validate assumptions and provide constructive recommendations.',
           'Scenario comparison and decision support: planning, cost and risk options to inform project choices.',
-          'Administrative support: preparation of CERFA dossiers and assistance with permit submissions if required.',
+          'Administrative support: preparation of CERFA dossiers and assistance with permit submissions if required. (Only for buildings under 150 m².)',
         ];
 
   const cadServices =
