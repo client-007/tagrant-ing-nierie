@@ -174,26 +174,26 @@ const About = () => {
                     className="w-32 h-32 rounded-full object-cover mb-4"
                     style={{ objectPosition: 'center 30%' }}
                   />
-                  <h3 className="text-xl font-bold text-foreground mb-1">
+                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-2">
                     Badreddine BELHAOUCHET
+                    <a 
+                      href="https://www.linkedin.com/in/badreddinebelhaouchetingenieur"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-primary hover:text-accent transition-colors duration-300"
+                      aria-label="LinkedIn profile"
+                    >
+                      <Linkedin size={18} />
+                    </a>
                   </h3>
                   <p className="text-sm font-medium text-primary mb-4">
                     {language === 'fr' ? 'Président & Fondateur' : 'President & Founder'}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-muted-foreground leading-relaxed">
                     {language === 'fr'
                       ? 'Chez TAGRANT INGÉNIERIE, nous mettons notre expertise au service de la réussite de vos projets d\'infrastructure. Rigueur, anticipation et coordination sont nos priorités pour garantir des décisions maîtrisées et des délais tenus.'
                       : 'At TAGRANT INGÉNIERIE, we put our expertise at the service of the success of your infrastructure projects. Rigor, anticipation and coordination are our priorities to guarantee controlled decisions and deadlines met.'}
                   </p>
-                  <a 
-                    href="https://www.linkedin.com/in/badreddinebelhaouchetingenieur"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
-                    aria-label="LinkedIn profile"
-                  >
-                    <Linkedin size={20} />
-                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -207,26 +207,26 @@ const About = () => {
                     alt="Karim LAMARI"
                     className="w-32 h-32 rounded-full object-cover mb-4"
                   />
-                  <h3 className="text-xl font-bold text-foreground mb-1">
+                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-2">
                     Karim LAMARI
+                    <a 
+                      href="https://www.linkedin.com/in/karim-charg%C3%A9-daffaires-business-manager/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-primary hover:text-accent transition-colors duration-300"
+                      aria-label="LinkedIn profile"
+                    >
+                      <Linkedin size={18} />
+                    </a>
                   </h3>
                   <p className="text-sm font-medium text-primary mb-4">
                     {language === 'fr' ? 'Chargé d\'Affaires & Acquisition de Talents' : 'Business Manager & Talent Acquisition'}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-muted-foreground leading-relaxed">
                     {language === 'fr'
                       ? 'Chez TAGRANT INGÉNIERIE, je transforme vos besoins en offres concrètes et recrute les compétences humaines et techniques adaptées. À l\'écoute des clients et des équipes, je veille à la qualité, à la réactivité et à la confiance tout au long du projet.'
                       : 'At TAGRANT INGÉNIERIE, I transform your needs into concrete offers and recruit the appropriate human and technical skills. Attentive to clients and teams, I ensure quality, responsiveness and trust throughout the project.'}
                   </p>
-                  <a 
-                    href="https://www.linkedin.com/in/karim-charg%C3%A9-daffaires-business-manager/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
-                    aria-label="LinkedIn profile"
-                  >
-                    <Linkedin size={20} />
-                  </a>
                 </div>
               </CardContent>
             </Card>
