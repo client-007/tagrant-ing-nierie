@@ -4,6 +4,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
 import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog, Heart, Zap } from 'lucide-react';
+import teamBadreddine from '@/assets/team-badreddine.jpg';
+import teamKarim from '@/assets/team-karim.jpg';
 
 const About = () => {
   const { t, language } = useLanguage();
@@ -148,7 +150,72 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Testimonials */}
+      {/* Our Team */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              {language === 'fr' ? 'Notre Équipe' : 'Our Team'}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {language === 'fr' 
+                ? 'Les experts derrière votre projet' 
+                : 'The experts behind your project'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Badreddine */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src={teamBadreddine} 
+                    alt="Badreddine BELHAOUCHET"
+                    className="w-32 h-32 rounded-full object-cover mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-foreground mb-1">
+                    Badreddine BELHAOUCHET
+                  </h3>
+                  <p className="text-sm font-medium text-primary mb-4">
+                    {language === 'fr' ? 'Président & Fondateur' : 'President & Founder'}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {language === 'fr'
+                      ? 'Chez TAGRANT INGÉNIERIE, nous mettons notre expertise au service de la réussite de vos projets d\'infrastructure. Rigueur, anticipation et coordination sont nos priorités pour garantir des décisions maîtrisées et des délais tenus.'
+                      : 'At TAGRANT INGÉNIERIE, we put our expertise at the service of the success of your infrastructure projects. Rigor, anticipation and coordination are our priorities to guarantee controlled decisions and deadlines met.'}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Karim */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src={teamKarim} 
+                    alt="Karim LAMARI"
+                    className="w-32 h-32 rounded-full object-cover mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-foreground mb-1">
+                    Karim LAMARI
+                  </h3>
+                  <p className="text-sm font-medium text-primary mb-4">
+                    {language === 'fr' ? 'Chargé d\'Affaires & Acquisition de Talents' : 'Business Manager & Talent Acquisition'}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {language === 'fr'
+                      ? 'Chez TAGRANT INGÉNIERIE, je transforme vos besoins en offres concrètes et recrute les compétences humaines et techniques adaptées. À l\'écoute des clients et des équipes, je veille à la qualité, à la réactivité et à la confiance tout au long du projet.'
+                      : 'At TAGRANT INGÉNIERIE, I transform your needs into concrete offers and recruit the appropriate human and technical skills. Attentive to clients and teams, I ensure quality, responsiveness and trust throughout the project.'}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
