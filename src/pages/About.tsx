@@ -172,7 +172,7 @@ const About = () => {
                     src={teamBadreddine} 
                     alt="Badreddine BELHAOUCHET"
                     className="w-32 h-32 rounded-full object-cover mb-4"
-                    style={{ objectPosition: 'center 30%', transform: 'scale(1.5)' }}
+                    style={{ objectPosition: 'center 30%' }}
                   />
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     Badreddine BELHAOUCHET
@@ -197,7 +197,7 @@ const About = () => {
                     src={teamKarim} 
                     alt="Karim LAMARI"
                     className="w-32 h-32 rounded-full object-cover mb-4"
-                    style={{ objectPosition: 'center center', transform: 'scale(1.5)' }}
+                    style={{ objectPosition: 'center 20%' }}
                   />
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     Karim LAMARI
