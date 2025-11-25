@@ -172,7 +172,7 @@ const About = () => {
                     src={teamBadreddine} 
                     alt="Badreddine BELHAOUCHET"
                     className="w-32 h-32 rounded-full object-cover mb-4"
-                    style={{ objectPosition: 'center 30%' }}
+                    style={{ objectPosition: 'center 30%', transform: 'scale(1.5)' }}
                   />
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     Badreddine BELHAOUCHET
