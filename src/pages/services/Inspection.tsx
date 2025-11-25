@@ -15,116 +15,164 @@ const Inspection = () => {
       ? [
           {
             title: 'Inspection',
-            desc: 'Visites ciblées et audits, relevés drone / LIDAR, essais NDT (sclérométrie, ultrasons, ferroscan, GPR), instrumentation et cartographie géoréférencée des désordres.',
+            desc: 'État de l\'ouvrage à l\'instant T, identification des désordres, premières préconisations et estimation grossière lorsque c\'est possible. Lorsque les causes sont incertaines, une analyse approfondie s\'impose (diagnostic).',
           },
           {
-            title: 'Diagnostic & études',
-            desc: 'Interprétation des données d\'inspection, évaluation de la capacité portante, modélisation (FEM) et préconisations techniques chiffrées.',
+            title: 'Diagnostic',
+            desc: 'Compréhension précise de l\'origine des désordres, de leur évolution et de leurs impacts. Cette étape prépare les études de conception (AVP / PRO).',
           },
           {
-            title: 'Dossier de consultation des entreprises (DCE)',
-            desc: 'Rédaction des pièces techniques (CCTP, plans, bordereaux), spécifications d\'essais et estimation des quantités.',
+            title: 'Études de conception (AVP / PRO)',
+            desc: 'Définition et comparaison des scénarios de réparation, chiffrage détaillé et choix de la solution. La solution retenue est ensuite traduite en documents opérationnels (DCE).',
           },
           {
-            title: 'Consultation & assistance à la passation',
-            desc: 'Lancement de la consultation, analyse des offres techniques et financières, assistance au choix des entreprises.',
+            title: 'Dossier de Consultation des Entreprises (DCE)',
+            desc: 'Rédaction du CCTP, plans, bordereaux et estimations nécessaires au lancement des travaux. Le projet peut alors être proposé aux entreprises.',
           },
           {
-            title: 'Pilotage des essais & contrôle qualité',
-            desc: 'Supervision des campagnes d\'essais et validation des résultats ; ajustement des préconisations si nécessaire.',
+            title: 'Consultation & choix des entreprises',
+            desc: 'Organisation de la consultation, analyse des offres et assistance à la sélection des entreprises les plus adaptées. Les travaux peuvent être engagés en toute maîtrise.',
           },
           {
             title: 'Suivi d\'exécution & réception',
-            desc: 'Suivi technique des travaux, contrôle qualité, levée des réserves, réception et constitution du DOE.',
+            desc: 'Contrôle technique du chantier, levée des réserves, réception et DOE. L\'ouvrage est livré dans les règles de l\'art.',
           },
           {
-            title: 'Monitoring & suivi post-intervention',
-            desc: 'Mise en place de systèmes de surveillance, reporting et suivi de l\'efficacité des interventions.',
+            title: 'Monitoring / suivi post-intervention',
+            desc: 'Surveillance de l\'ouvrage, mesures régulières et analyse de performance dans le temps.',
           },
         ]
       : [
           {
             title: 'Inspection',
-            desc: 'Targeted visits and audits, drone / LIDAR surveys, NDT (rebound hammer, ultrasound, ferroscan, pacometry, GPR), instrumentation and geo-referenced defect mapping.',
+            desc: 'State of the structure at time T, identification of defects, initial recommendations and rough estimate where possible. When causes are uncertain, an in-depth analysis is required (diagnosis).',
           },
           {
-            title: 'Diagnostic & studies',
-            desc: 'Interpretation of inspection data, load-capacity assessment, FEM modelling and technically justified, costed recommendations.',
+            title: 'Diagnosis',
+            desc: 'Precise understanding of the origin of defects, their evolution and their impacts. This stage prepares design studies (preliminary / detailed design).',
           },
           {
-            title: 'Dossier de Consultation des Entreprises (DCE)',
-            desc: 'Drafting of technical documents (CCTP, drawings, bill of quantities), test specifications and quantity estimates.',
+            title: 'Design studies (preliminary / detailed)',
+            desc: 'Definition and comparison of repair scenarios, detailed costing and choice of solution. The selected solution is then translated into operational documents (tender documents).',
           },
           {
-            title: 'Tendering & Procurement Assistance',
-            desc: 'Launch of consultations, analysis of technical and financial offers, assistance in contractor selection.',
+            title: 'Tender Documents (DCE)',
+            desc: 'Drafting of technical specifications, drawings, bills of quantities and estimates necessary for launching the works. The project can then be proposed to contractors.',
           },
           {
-            title: 'Test Management & Quality Control',
-            desc: 'Supervision of test campaigns, validation of results and adjustment of recommendations where necessary.',
+            title: 'Tendering & contractor selection',
+            desc: 'Organization of the tender process, analysis of offers and assistance in selecting the most suitable contractors. The works can be launched with full control.',
           },
           {
-            title: 'Execution Supervision & Handover',
-            desc: 'Technical follow-up of works, quality control, resolution of non-conformities, handover and DOE assembly.',
+            title: 'Execution supervision & handover',
+            desc: 'Technical control of the site, resolution of defects, handover and as-built documentation. The structure is delivered in accordance with best practices.',
           },
           {
-            title: 'Monitoring & Post-Intervention Follow-Up',
-            desc: 'Implementation of monitoring systems, reporting and assessment of intervention effectiveness.',
+            title: 'Monitoring / post-intervention follow-up',
+            desc: 'Structure surveillance, regular measurements and performance analysis over time.',
           },
         ];
 
   const methodology =
     language === 'fr'
       ? [
-          'Prise de besoin et visite initiale',
-          'Inspection instrumentée et collecte de données',
-          'Diagnostic technique et préconisations chiffrées',
-          'Rédaction DCE et consultation des entreprises',
-          'Pilotage des essais, suivi des travaux, contrôle qualité et réception',
+          'Inspection – État à l\'instant T et premières préconisations.',
+          'Diagnostic – Analyse des causes et des risques.',
+          'Études de conception – Scénarios, choix et chiffrage précis.',
+          'DCE – Pièces techniques et estimation des travaux.',
+          'Consultation – Analyse des offres et choix des entreprises.',
+          'Suivi d\'exécution & réception – Contrôle, levée des réserves et DOE.',
         ]
       : [
-          'Needs assessment and initial site visit',
-          'Instrumented inspection and data collection',
-          'Technical diagnosis and costed recommendations',
-          'DCE preparation and contractor tendering',
-          'Test supervision, construction follow-up, quality control and handover',
+          'Inspection – State at time T and initial recommendations.',
+          'Diagnosis – Analysis of causes and risks.',
+          'Design studies – Scenarios, selection and precise costing.',
+          'Tender documents – Technical specifications and work estimates.',
+          'Tendering – Analysis of offers and contractor selection.',
+          'Execution supervision & handover – Control, defect resolution and as-built documentation.',
         ];
 
   const deliverables =
     language === 'fr'
       ? [
-          'Rapport d\'inspection (cartographie, photos géoréférencées)',
-          'Note de diagnostic et préconisations chiffrées',
-          'Dossier DCE complet (CCTP, plans, bordereaux)',
-          'Rapports d\'essais et comptes-rendus de contrôle qualité',
-          'Procès-verbaux de réception, DOE et plan de suivi post-travaux',
+          'Rapport d\'inspection: État à l\'instant T, cartographie des désordres, photos et relevés.',
+          'Note de diagnostic: Analyse des causes, évaluation des risques, besoins d\'investigations complémentaires et préconisations chiffrées.',
+          'Documents d\'Études de conception (AVP / PRO): Scénarios de réparation, analyse comparative, chiffrages détaillés, justification de la solution retenue et plans/projets au niveau PRO.',
+          'Dossier DCE complet: CCTP, plans, bordereaux et estimations pour lancer la consultation.',
+          'Procès-verbaux de réception, contrôle du DOE et plan de suivi post-travaux.',
         ]
       : [
-          'Inspection report (defect mapping, geo-referenced photos)',
-          'Diagnostic note and costed recommendations',
-          'Complete DCE (CCTP, drawings, bills of quantities)',
-          'Test reports and quality control records',
-          'Handover minutes, DOE and post-works monitoring plan',
+          'Inspection report: State at time T, defect mapping, photos and surveys.',
+          'Diagnostic note: Analysis of causes, risk assessment, need for additional investigations and costed recommendations.',
+          'Design study documents (preliminary / detailed): Repair scenarios, comparative analysis, detailed costings, justification of selected solution and detailed design drawings.',
+          'Complete tender documents: Technical specifications, drawings, bills of quantities and estimates to launch the tender.',
+          'Handover minutes, as-built documentation control and post-works monitoring plan.',
         ];
 
   const tools =
     language === 'fr'
-      ? 'Drones, GPR, LIDAR, capteurs IoT, équipements NDT. Logiciels : Revit/IFC, FARO SCENE, Recap, Covadis, Mensura, outils FEM (Abaqus / Robot / SAP2000). Référentiels : bonnes pratiques Cerema, Eurocodes, ITSEOA et normes applicables.'
-      : 'Drones, GPR, LIDAR, IoT sensors, NDT devices. Software: Revit / IFC, FARO SCENE, Recap, Covadis, Mensura, FEM tools (Abaqus, Robot, SAP2000). References: Cerema good practices, Eurocodes, ITSEOA and applicable standards.';
+      ? {
+          inspection: [
+            'GPR (géoradar)',
+            'Ferroscan',
+            'Scléromètre',
+            'Ultrasons',
+            'Instrumentation et capteurs IoT',
+            'Outils NDT (essais non destructifs)',
+          ],
+          software: [
+            'Revit / IFC',
+            'Covadis',
+            'Mensura',
+            'Autocad',
+            'Autodesk Robot',
+          ],
+          compliance: [
+            'Normes Cerema',
+            'Eurocodes',
+            'ITSEOA',
+            'Normes techniques applicables selon le type d\'ouvrage',
+            'Recommandations professionnelles en inspection, diagnostic et réhabilitation',
+          ],
+        }
+      : {
+          inspection: [
+            'GPR (ground penetrating radar)',
+            'Ferroscan',
+            'Rebound hammer',
+            'Ultrasound',
+            'Instrumentation and IoT sensors',
+            'NDT tools (non-destructive testing)',
+          ],
+          software: [
+            'Revit / IFC',
+            'Covadis',
+            'Mensura',
+            'Autocad',
+            'Autodesk Robot',
+          ],
+          compliance: [
+            'Cerema standards',
+            'Eurocodes',
+            'ITSEOA',
+            'Technical standards applicable according to structure type',
+            'Professional recommendations in inspection, diagnosis and rehabilitation',
+          ],
+        };
 
   const benefits =
     language === 'fr'
       ? [
-          'Dossier DCE prêt à l\'emploi et préconisations applicables',
-          'Supervision technique rigoureuse des essais et suivi des travaux',
-          'Renforcement de la traçabilité documentaire et du contrôle qualité',
-          'Meilleur contrôle des coûts et du cycle de vie de l\'ouvrage',
+          'Un DCE complet et immédiatement exploitable, basé sur la solution claire et directement applicable.',
+          'Un accompagnement technique rigoureux, avec un suivi précis du chantier et de la conformité des interventions.',
+          'Une traçabilité documentaire renforcée, garantissant transparence, cohérence et qualité tout au long du projet.',
+          'Un meilleur contrôle des coûts et de la durée de vie de l\'ouvrage, grâce à des choix techniques optimisés et documentés.',
         ]
       : [
-          'Ready-to-use DCE and implementable recommendations',
-          'Rigorous technical oversight of testing and works follow-up',
-          'Strengthened documentation traceability and quality control',
-          'Better control of costs and lifecycle of the structure',
+          'A complete and immediately usable tender document, based on a clear and directly applicable solution.',
+          'Rigorous technical support, with precise site monitoring and compliance of interventions.',
+          'Enhanced documentary traceability, ensuring transparency, consistency and quality throughout the project.',
+          'Better control of costs and structure lifespan, thanks to optimized and documented technical choices.',
         ];
 
   return (
@@ -143,7 +191,7 @@ const Inspection = () => {
         <div className="relative container mx-auto px-4 text-center">
           <Wrench className="h-16 w-16 mx-auto mb-6 text-primary-foreground" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">
-            {language === 'fr' ? 'Inspection, Maintenance & Réparation' : 'Inspection, Maintenance & Repair'}
+            {language === 'fr' ? 'Inspection, Maintenance & Réparation des Ouvrages d\'art' : 'Inspection, Maintenance & Repair of Civil Engineering Structures'}
           </h1>
           <p className="text-xl max-w-3xl mx-auto text-primary-foreground/95">
             {language === 'fr'
@@ -163,8 +211,8 @@ const Inspection = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {language === 'fr'
-                ? 'TAGRANT INGENIERIE réalise inspections, diagnostics et études de réhabilitation, pilote les campagnes d\'essais, rédige les dossiers de consultation des entreprises (DCE) et assure le suivi technique des interventions jusqu\'à la réception.'
-                : 'TAGRANT INGENIERIE performs inspections, technical diagnostics and rehabilitation studies, pilots test campaigns, prepares the Dossier de Consultation des Entreprises (DCE) and provides technical supervision throughout execution and handover.'}
+                ? 'TAGRANT INGENIERIE vous accompagne tout au long du projet : nous inspectons vos ouvrages, réalisons les diagnostics, concevons les études de réhabilitation, pilotons les campagnes d\'essais, préparons les dossiers de consultation et assurons le suivi technique des travaux jusqu\'à leur réception.'
+                : 'TAGRANT INGENIERIE supports you throughout the project: we inspect your structures, carry out diagnostics, design rehabilitation studies, manage test campaigns, prepare consultation documents and provide technical supervision of works until handover.'}
             </p>
           </div>
 
@@ -192,7 +240,7 @@ const Inspection = () => {
           <Card className="mb-12">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                {language === 'fr' ? 'Méthodologie (processus)' : 'Methodology (Process)'}
+                {language === 'fr' ? 'Méthodologie' : 'Methodology'}
               </h3>
               <ol className="space-y-3 list-decimal list-inside text-muted-foreground">
                 {methodology.map((step, index) => (
@@ -222,10 +270,53 @@ const Inspection = () => {
           {/* Tools & Compliance */}
           <Card className="mb-12">
             <CardContent className="pt-6">
-              <h3 className="text-2xl font-bold mb-4 text-foreground">
+              <h3 className="text-2xl font-bold mb-6 text-foreground">
                 {language === 'fr' ? 'Outils & conformité' : 'Tools & Compliance'}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">{tools}</p>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-3">
+                    {language === 'fr' ? 'Outils d\'inspection et d\'investigation:' : 'Inspection and investigation tools:'}
+                  </h4>
+                  <ul className="space-y-2">
+                    {tools.inspection.map((tool, index) => (
+                      <li key={index} className="flex items-start space-x-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{tool}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-foreground mb-3">
+                    {language === 'fr' ? 'Outils logiciels:' : 'Software tools:'}
+                  </h4>
+                  <ul className="space-y-2">
+                    {tools.software.map((tool, index) => (
+                      <li key={index} className="flex items-start space-x-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{tool}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-foreground mb-3">
+                    {language === 'fr' ? 'Référentiels & conformité:' : 'Standards & compliance:'}
+                  </h4>
+                  <ul className="space-y-2">
+                    {tools.compliance.map((item, index) => (
+                      <li key={index} className="flex items-start space-x-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </CardContent>
           </Card>
 

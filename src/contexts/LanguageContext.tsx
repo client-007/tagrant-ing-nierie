@@ -25,11 +25,11 @@ const translations = {
     'hero.cta': 'Découvrir nos services',
     'hero.contact': 'Nous contacter',
     'hero.quote': 'Demander un devis',
-    'hero.slide1.title': 'Excellence en Gestion de Projet',
+    'hero.slide1.title': 'Gestion de Projet',
     'hero.slide1.subtitle': 'Pilotage stratégique et coordination optimale de vos projets d\'infrastructure',
-    'hero.slide2.title': 'Études Techniques de Pointe',
+    'hero.slide2.title': 'Études Techniques & Coordination',
     'hero.slide2.subtitle': 'Analyses approfondies et solutions innovantes pour vos défis techniques',
-    'hero.slide3.title': 'Inspection, Maintenance & Réparation des Structures',
+    'hero.slide3.title': 'Inspection, Maintenance & Réparation des Ouvrages d\'art',
     'hero.slide3.subtitle': 'Services de diagnostic avancés pour les structures en béton et en acier afin d\'assurer la sécurité, la durabilité et la performance',
     
     // Company Overview
@@ -39,15 +39,15 @@ const translations = {
     // Services
     'services.title': 'Nos services principaux',
     'services.subtitle': 'Solutions d\'ingénierie complètes adaptées aux besoins de votre projet.',
-    'services.project': 'Gestion de projet',
+    'services.project': 'Gestion de Projet',
     'services.project.desc': 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings et la livraison des projets',
-    'services.studies': 'Études techniques & Coordination',
-    'services.studies.desc': 'Études d\'exécution, coordination BIM et synthèse technique pour vos projets d\'infrastructure',
-    'services.inspection': 'Inspection, Maintenance et Réparation des Structures',
-    'services.inspection.desc': 'Diagnostics structurels, inspections non destructives et solutions de réparation conformes aux normes européennes',
+    'services.studies': 'Études Techniques & Coordination',
+    'services.studies.desc': 'Nous réalisons des études techniques et de la modélisation pour assurer la réussite de vos projets de génie civil et d\'infrastructure. Nous fournissons des maquettes numériques (BIM) de haute qualité, axées sur la rigueur des études et la continuité entre bureaux d\'études et équipes d\'exécution.',
+    'services.inspection': 'Inspection, Maintenance & Réparation des Ouvrages d\'art',
+    'services.inspection.desc': 'Nous accompagnons les maîtres d\'ouvrage dans la compréhension, la préservation et la remise en état de leurs ouvrages d\'art. Nous identifions les désordres, en analysons les causes et définissons les solutions les plus adaptées.',
     'services.training': 'Formation',
-    'services.training.desc': 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques',
-    'services.professionalTraining': 'Formation Professionnelle',
+    'services.training.desc': 'Programmes de formation en ingénierie, gestion de projet et outils numériques',
+    'services.professionalTraining': 'Méthodes Inspection & diagnostic d\'ouvrages d\'art',
     'services.professionalTraining.desc': 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques',
     'services.learn': 'En savoir plus',
     
@@ -74,8 +74,8 @@ const translations = {
     'values.agility.desc': 'Approche flexible et réactive pour répondre aux besoins dynamiques des projets.',
     
     // Team
-    'team.title': 'Découvrez notre équipe',
-    'team.subtitle': 'Voix authentiques de professionnels sur LinkedIn',
+    'team.title': 'Témoignages',
+    'team.subtitle': 'Ce que disent nos clients',
     
     // CTA Section
     'cta.title': 'Prêt à démarrer votre projet ?',
@@ -89,7 +89,7 @@ const translations = {
     'footer.follow': 'Suivez-nous',
     'footer.rights': 'Tous droits réservés.',
     'footer.address': 'Adresse',
-    'footer.address.full': '123 Avenue des Champs-Élysées, Paris, France',
+    'footer.address.full': '26 Rue Linois 75015 Paris',
     'footer.email': 'Email',
     'footer.phone': 'Téléphone',
     
@@ -122,11 +122,11 @@ const translations = {
     'hero.cta': 'Explore Our Services',
     'hero.contact': 'Contact Us',
     'hero.quote': 'Request a Quote',
-    'hero.slide1.title': 'Excellence in Project Management',
+    'hero.slide1.title': 'Project Management',
     'hero.slide1.subtitle': 'Strategic leadership and optimal coordination of your infrastructure projects',
-    'hero.slide2.title': 'Advanced Technical Studies',
+    'hero.slide2.title': 'Technical Studies & Coordination',
     'hero.slide2.subtitle': 'In-depth analysis and innovative solutions for your technical challenges',
-    'hero.slide3.title': 'Inspection, Maintenance & Repair of Structures',
+    'hero.slide3.title': 'Inspection, Maintenance & Repair of Civil Engineering Structures',
     'hero.slide3.subtitle': 'Advanced diagnostic services for concrete and steel structures to ensure safety, durability, and performance',
     
     // Company Overview
@@ -139,12 +139,12 @@ const translations = {
     'services.project': 'Project Management',
     'services.project.desc': 'Operational support in civil engineering and infrastructure to secure schedules and project delivery',
     'services.studies': 'Technical Studies & Coordination',
-    'services.studies.desc': 'Execution studies, BIM coordination and technical synthesis for your infrastructure projects',
-    'services.inspection': 'Inspection, Maintenance, and Repair of Structures',
-    'services.inspection.desc': 'Structural diagnostics, non-destructive testing and repair solutions compliant with European standards',
+    'services.studies.desc': 'We carry out technical studies and modeling to ensure the success of your civil engineering and infrastructure projects. We provide high-quality digital models (BIM), focused on rigorous studies and continuity between design offices and execution teams.',
+    'services.inspection': 'Inspection, Maintenance & Repair of Civil Engineering Structures',
+    'services.inspection.desc': 'We support asset owners in understanding, preserving and restoring their civil engineering structures. We identify defects, analyze their causes and define the most appropriate solutions.',
     'services.training': 'Training',
-    'services.training.desc': 'Professional training programs in engineering, project management and digital tools',
-    'services.professionalTraining': 'Professional Training',
+    'services.training.desc': 'Training programs in engineering, project management and digital tools',
+    'services.professionalTraining': 'Methods Inspection & diagnosis of civil engineering structures',
     'services.professionalTraining.desc': 'Professional training programs in engineering, project management and digital tools',
     'services.learn': 'Learn More',
     
@@ -171,8 +171,8 @@ const translations = {
     'values.agility.desc': 'Flexible and responsive approach to meet dynamic project needs.',
     
     // Team
-    'team.title': 'Discover Our Team',
-    'team.subtitle': 'Authentic voices from professionals on LinkedIn',
+    'team.title': 'Testimonials',
+    'team.subtitle': 'What our clients say',
     
     // CTA Section
     'cta.title': 'Ready to Start Your Project?',
@@ -186,7 +186,7 @@ const translations = {
     'footer.follow': 'Follow Us',
     'footer.rights': 'All rights reserved.',
     'footer.address': 'Address',
-    'footer.address.full': '123 Avenue des Champs-Élysées, Paris, France',
+    'footer.address.full': '26 Rue Linois 75015 Paris',
     'footer.email': 'Email',
     'footer.phone': 'Phone',
     

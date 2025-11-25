@@ -78,14 +78,14 @@ export const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <a href="mailto:contact@tagrant.fr" className="hover:opacity-100 transition-opacity">
-                  contact@tagrant.fr
+                <a href="mailto:contact@tagrantingenierie.fr" className="hover:opacity-100 transition-opacity">
+                  contact@tagrantingenierie.fr
                 </a>
               </li>
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <a href="tel:+33123456789" className="hover:opacity-100 transition-opacity">
-                  +33 1 23 45 67 89
+                <a href="tel:+33183066796" className="hover:opacity-100 transition-opacity">
+                  +33 1 83 06 67 96
                 </a>
               </li>
             </ul>
