@@ -3,7 +3,7 @@ import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
-import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog, Heart, Zap } from 'lucide-react';
+import { CheckCircle2, Target, Eye, Lightbulb, Shield, Users, Cog, Heart, Zap, Linkedin } from 'lucide-react';
 import teamBadreddine from '@/assets/team-badreddine.jpg';
 import teamKarim from '@/assets/team-karim.jpg';
 
@@ -180,11 +180,20 @@ const About = () => {
                   <p className="text-sm font-medium text-primary mb-4">
                     {language === 'fr' ? 'Président & Fondateur' : 'President & Founder'}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     {language === 'fr'
                       ? 'Chez TAGRANT INGÉNIERIE, nous mettons notre expertise au service de la réussite de vos projets d\'infrastructure. Rigueur, anticipation et coordination sont nos priorités pour garantir des décisions maîtrisées et des délais tenus.'
                       : 'At TAGRANT INGÉNIERIE, we put our expertise at the service of the success of your infrastructure projects. Rigor, anticipation and coordination are our priorities to guarantee controlled decisions and deadlines met.'}
                   </p>
+                  <a 
+                    href="https://www.linkedin.com/in/badreddinebelhaouchetingenieur"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
+                    aria-label="LinkedIn profile"
+                  >
+                    <Linkedin size={20} />
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -204,11 +213,20 @@ const About = () => {
                   <p className="text-sm font-medium text-primary mb-4">
                     {language === 'fr' ? 'Chargé d\'Affaires & Acquisition de Talents' : 'Business Manager & Talent Acquisition'}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     {language === 'fr'
                       ? 'Chez TAGRANT INGÉNIERIE, je transforme vos besoins en offres concrètes et recrute les compétences humaines et techniques adaptées. À l\'écoute des clients et des équipes, je veille à la qualité, à la réactivité et à la confiance tout au long du projet.'
                       : 'At TAGRANT INGÉNIERIE, I transform your needs into concrete offers and recruit the appropriate human and technical skills. Attentive to clients and teams, I ensure quality, responsiveness and trust throughout the project.'}
                   </p>
+                  <a 
+                    href="https://www.linkedin.com/in/karim-charg%C3%A9-daffaires-business-manager/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-300"
+                    aria-label="LinkedIn profile"
+                  >
+                    <Linkedin size={20} />
+                  </a>
                 </div>
               </CardContent>
             </Card>
