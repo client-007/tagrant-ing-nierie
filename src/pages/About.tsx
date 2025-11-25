@@ -197,7 +197,7 @@ const About = () => {
                     src={teamKarim} 
                     alt="Karim LAMARI"
                     className="w-32 h-32 rounded-full object-cover mb-4"
-                    style={{ objectPosition: 'center center', transform: 'scale(1.35)' }}
+                    style={{ objectPosition: 'center center', transform: 'scale(1.5)' }}
                   />
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     Karim LAMARI
