@@ -174,7 +174,7 @@ const About = () => {
                     className="w-32 h-32 rounded-full object-cover mb-4"
                     style={{ objectPosition: 'center 30%' }}
                   />
-                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-3">
                     Badreddine BELHAOUCHET
                     <a 
                       href="https://www.linkedin.com/in/badreddinebelhaouchetingenieur"
@@ -207,7 +207,7 @@ const About = () => {
                     alt="Karim LAMARI"
                     className="w-32 h-32 rounded-full object-cover mb-4"
                   />
-                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1 flex items-center justify-center gap-3">
                     Karim LAMARI
                     <a 
                       href="https://www.linkedin.com/in/karim-charg%C3%A9-daffaires-business-manager/"
