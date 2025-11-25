@@ -47,7 +47,7 @@ const translations = {
     'services.inspection.desc': 'Nous accompagnons les maîtres d\'ouvrage dans la compréhension, la préservation et la remise en état de leurs ouvrages d\'art. Nous identifions les désordres, en analysons les causes et définissons les solutions les plus adaptées.',
     'services.training': 'Formation',
     'services.training.desc': 'Programmes de formation en ingénierie, gestion de projet et outils numériques',
-    'services.professionalTraining': 'Méthodes Inspection & diagnostic d\'ouvrages d\'art',
+    'services.professionalTraining': 'Formation Professionnelle',
     'services.professionalTraining.desc': 'Programmes de formation professionnelle en ingénierie, gestion de projet et outils numériques',
     'services.learn': 'En savoir plus',
     
@@ -144,7 +144,7 @@ const translations = {
     'services.inspection.desc': 'We support asset owners in understanding, preserving and restoring their civil engineering structures. We identify defects, analyze their causes and define the most appropriate solutions.',
     'services.training': 'Training',
     'services.training.desc': 'Training programs in engineering, project management and digital tools',
-    'services.professionalTraining': 'Methods Inspection & diagnosis of civil engineering structures',
+    'services.professionalTraining': 'Professional Training',
     'services.professionalTraining.desc': 'Professional training programs in engineering, project management and digital tools',
     'services.learn': 'Learn More',
     
