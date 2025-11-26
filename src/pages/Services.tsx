@@ -100,7 +100,7 @@ const Services = () => {
       link: '/services/professional-training',
       description:
         language === 'fr'
-          ? 'Programmes de formation en ingénierie complets conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
+          ? 'Programmes de formation en ingénierie conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
           : 'Comprehensive engineering training programs designed to develop technical skills and professional expertise. Our training bridges the gap between theory and practice, empowering engineers and teams to excel in their roles.',
       capabilities:
         language === 'fr'
@@ -109,7 +109,7 @@ const Services = () => {
               'Formation en gestion de projet',
               'Outils logiciels & numériques',
               'Normes de sécurité et qualité',
-              'Support de certification professionnelle',
+              'Méthodes Inspection & diagnostic d\'ouvrages d\'art',
             ]
           : [
               'Technical skills development',
