@@ -130,6 +130,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {services.map((service, index) => {
+              const IconComponent = service.icon;
               return (
                 <Card
                   key={index}
@@ -143,7 +144,10 @@ const Services = () => {
                     />
                   </div>
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
+                    <div className="flex items-center gap-3 mb-3">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                      <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
+                    </div>
                     <CardDescription className="text-base leading-relaxed text-foreground">
                       {service.description}
                     </CardDescription>
