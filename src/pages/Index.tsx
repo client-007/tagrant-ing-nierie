@@ -194,47 +194,32 @@ const Index = () => {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <Card
-                  key={index}
-                  className="overflow-hidden hover:shadow-xl transition-all border flex flex-col"
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed text-foreground">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1 flex flex-col justify-between">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">
-                        {language === 'fr' ? 'Compétences clés:' : 'Key Capabilities:'}
-                      </h4>
-                      <ul className="space-y-2">
-                        {service.capabilities.map((capability, capIndex) => (
-                          <li key={capIndex} className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span className="text-sm text-muted-foreground">{capability}</span>
-                          </li>
-                        ))}
-                      </ul>
+                <Link key={index} to={service.link}>
+                  <Card
+                    className="overflow-hidden hover:shadow-xl transition-all border flex flex-col h-full cursor-pointer"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <Button 
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
-                      asChild
-                    >
-                      <Link to={service.link}>
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
+                      <CardDescription className="text-base leading-relaxed text-foreground">
+                        {service.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col justify-end">
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground pointer-events-none" 
+                      >
                         {language === 'fr' ? 'En savoir plus' : 'Learn More'}
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               );
             })}
           </div>
