@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Wrench } from 'lucide-react';
-import serviceInspection from '@/assets/service-inspection.jpg';
+import serviceInspection from '@/assets/service-inspection-engineer.jpg';
 
 const Inspection = () => {
   const { language } = useLanguage();
