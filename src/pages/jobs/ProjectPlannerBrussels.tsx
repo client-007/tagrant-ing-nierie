@@ -282,8 +282,8 @@ const ProjectPlannerBrussels = () => {
                 </p>
                 <div className="flex items-center gap-2 mb-4">
                   <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:contact@tagrant-ingenierie.com" className="text-primary hover:underline font-semibold">
-                    contact@tagrant-ingenierie.com
+                  <a href="mailto:contact@tagrantingenierie.fr" className="text-primary hover:underline font-semibold">
+                    contact@tagrantingenierie.fr
                   </a>
                 </div>
                 <p className="text-sm text-muted-foreground mb-6">
@@ -292,7 +292,7 @@ const ProjectPlannerBrussels = () => {
                     : "Subject: Application — Project Planner"}
                 </p>
                 <Button size="lg" asChild>
-                  <a href="mailto:contact@tagrant-ingenierie.com?subject=Candidature — Project Planner">
+                  <a href="mailto:contact@tagrantingenierie.fr?subject=Candidature — Project Planner">
                     {language === 'fr' ? 'Postuler maintenant' : 'Apply Now'}
                   </a>
                 </Button>
