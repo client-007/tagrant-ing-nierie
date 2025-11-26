@@ -83,7 +83,7 @@ const Jobs = () => {
       {/* Application Form */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8">
               {language === 'fr'
                 ? "Les postes proposés ne correspondent pas à votre profil ? Envoyez‑nous votre candidature spontanée — nous la conserverons et vous contacterons dès qu'une opportunité pertinente se présentera"

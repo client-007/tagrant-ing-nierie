@@ -20,27 +20,37 @@ const Index = () => {
   const services = [
     {
       icon: FolderKanban,
-      title: t('services.project'),
-      description: t('services.project.desc'),
+      title: language === 'fr' ? 'Gestion de Projet' : 'Project Management',
+      description:
+        language === 'fr'
+          ? 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings, les méthodes et la livraison des projets. Nous fournissons un support de projet intégré sur site pour transformer les études en solutions immédiatement réalisables.'
+          : 'Operational support in civil engineering and infrastructure to secure schedules, methods and project delivery. We provide integrated on-site project support, operating at the heart of the site to transform studies into immediately implementable solutions.',
       image: serviceProject,
       link: '/services/project-management',
       capabilities:
         language === 'fr'
           ? [
-              'Analyse de variance des plannings',
-              'Expertise des méthodes d\'exécution',
+              'Analyse des écarts de planning',
+              'Expertise en méthodes d\'exécution',
               'Opérations sur sites occupés',
+              'Comparaison de scénarios et support aux décisions',
+              'Gestion des réclamations contractuelles',
             ]
           : [
               'Schedule variance analysis',
               'Execution methods expertise',
               'Operations on occupied sites',
+              'Scenario comparison & decision support',
+              'Contractual claims management',
             ],
     },
     {
       icon: FileText,
-      title: t('services.studies'),
-      description: t('services.studies.desc'),
+      title: language === 'fr' ? 'Études Techniques & Coordination' : 'Technical Studies & Coordination',
+      description:
+        language === 'fr'
+          ? 'Nous réalisons des études techniques et de la modélisation pour assurer la réussite de vos projets de génie civil et d\'infrastructure. Nous fournissons des maquettes numériques (BIM) de haute qualité, axées sur la rigueur des études et la continuité entre bureaux d\'études et équipes d\'exécution.'
+          : 'Reliable technical studies and precise modeling to ensure the success of your civil engineering and infrastructure projects. We deliver high-quality computer-aided engineering focused on study quality and continuity between design offices and execution.',
       image: serviceStudies,
       link: '/services/technical-studies',
       capabilities:
@@ -48,37 +58,52 @@ const Index = () => {
           ? [
               'Calculs structurels & vérifications',
               'Modélisation CAO/BIM (AutoCAD, Revit)',
-              'Coordination conception-chantier',
+              'Pilotage des études d\'exécution',
+              'Coordination Etudes-Travaux',
+              'Gestion interface sol & structure',
             ]
           : [
               'Structural calculations & verifications',
               'CAD/BIM modeling (AutoCAD, Revit)',
+              'Execution study management',
               'Design-to-works coordination',
+              'Geotechnical support interface',
             ],
     },
     {
       icon: Wrench,
-      title: t('services.inspection'),
-      description: t('services.inspection.desc'),
+      title: language === 'fr' ? 'Inspection, Maintenance & Réparation des Ouvrages d\'art' : 'Inspection, Maintenance & Repair',
+      description:
+        language === 'fr'
+          ? 'Nous accompagnons les maîtres d\'ouvrage dans la compréhension, la préservation et la remise en état de leurs ouvrages d\'art. Nous identifions les désordres, en analysons les causes et définissons les solutions les plus adaptées.'
+          : 'Advanced diagnostic services for concrete and steel structures to assess safety, durability, and performance. We deliver accurate, data-driven reports that support repair planning and ensure compliance with European standards.',
       image: serviceInspection,
       link: '/services/inspection',
       capabilities:
         language === 'fr'
           ? [
-              'Tests non destructifs (NDT)',
-              'Modélisation par éléments finis',
-              'Numérisation laser 3D',
+              'Inspecter les ouvrages et établir leur état réel à l\'instant T',
+              'Diagnostiquer les désordres et en comprendre les causes',
+              'Concevoir des solutions adaptées de réparation (AVP / PRO)',
+              'Préparer des DCE complets et exploitables',
+              'Assister à la consultation et au choix des entreprises',
+              'Suivre l\'exécution des travaux jusqu\'à la réception',
             ]
           : [
               'Non-destructive testing (NDT)',
               'Finite Element Modeling',
+              'Drone-based visual inspections',
               '3D laser scanning',
+              'Compliance with EN 1992, EN 1993, EN 1504',
             ],
     },
     {
       icon: GraduationCap,
-      title: t('services.professionalTraining'),
-      description: t('services.professionalTraining.desc'),
+      title: language === 'fr' ? 'Formation Professionnelle' : 'Professional Training',
+      description:
+        language === 'fr'
+          ? 'Programmes de formation en ingénierie conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
+          : 'Comprehensive engineering training programs designed to develop technical skills and professional expertise. Our training bridges the gap between theory and practice, empowering engineers and teams to excel in their roles.',
       image: serviceTraining,
       link: '/services/professional-training',
       capabilities:
@@ -86,12 +111,16 @@ const Index = () => {
           ? [
               'Développement de compétences techniques',
               'Formation en gestion de projet',
+              'Outils logiciels & numériques',
               'Normes de sécurité et qualité',
+              'Méthodes Inspection & diagnostic d\'ouvrages d\'art',
             ]
           : [
               'Technical skills development',
               'Project management training',
+              'Software & digital tools',
               'Safety & quality standards',
+              'Professional certification support',
             ],
     },
   ];
@@ -185,7 +214,7 @@ const Index = () => {
                   <CardContent className="flex-1 flex flex-col justify-between">
                     <div className="mb-6">
                       <h4 className="font-semibold text-foreground mb-3">
-                        {language === 'fr' ? 'Capacités clés:' : 'Key Capabilities:'}
+                        {language === 'fr' ? 'Compétences clés:' : 'Key Capabilities:'}
                       </h4>
                       <ul className="space-y-2">
                         {service.capabilities.map((capability, capIndex) => (
