@@ -16,6 +16,22 @@ const Jobs = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      {/* Why Join Us */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {language === 'fr' ? 'Pourquoi nous rejoindre ?' : 'Why Join Us?'}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {language === 'fr'
+                ? "Rejoignez une équipe d'ingénieurs passionnés où l'excellence technique rencontre l'innovation. Chez TAGRANT INGENIERIE, nous offrons des opportunités de croissance professionnelle sur des projets d'envergure, un environnement collaboratif qui valorise l'expertise de chacun, et la chance de façonner l'avenir des infrastructures. Que vous soyez ingénieur expérimenté ou jeune diplômé, venez contribuer à des projets qui font la différence."
+                : "Join a team of passionate engineers where technical excellence meets innovation. At TAGRANT INGENIERIE, we offer professional growth opportunities on large-scale projects, a collaborative environment that values everyone's expertise, and the chance to shape the future of infrastructure. Whether you're an experienced engineer or recent graduate, come contribute to projects that make a difference."}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Open Positions */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
@@ -64,30 +80,14 @@ const Jobs = () => {
         </div>
       </section>
 
-      {/* Why Join Us */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              {language === 'fr' ? 'Pourquoi nous rejoindre ?' : 'Why Join Us?'}
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              {language === 'fr'
-                ? "Rejoignez une équipe d'ingénieurs passionnés où l'excellence technique rencontre l'innovation. Chez Tagrant, nous offrons des opportunités de croissance professionnelle sur des projets d'envergure, un environnement collaboratif qui valorise l'expertise de chacun, et la chance de façonner l'avenir des infrastructures. Que vous soyez ingénieur expérimenté ou jeune diplômé, venez contribuer à des projets qui font la différence."
-                : "Join a team of passionate engineers where technical excellence meets innovation. At Tagrant, we offer professional growth opportunities on large-scale projects, a collaborative environment that values everyone's expertise, and the chance to shape the future of infrastructure. Whether you're an experienced engineer or recent graduate, come contribute to projects that make a difference."}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Application Form */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8">
               {language === 'fr'
-                ? "Aucun poste n'est actuellement ouvert, mais nous accueillons les candidatures spontanées"
-                : "No positions are currently open, but we welcome speculative applications"}
+                ? "Les postes proposés ne correspondent pas à votre profil ? Envoyez‑nous votre candidature spontanée — nous la conserverons et vous contacterons dès qu'une opportunité pertinente se présentera"
+                : "The proposed positions do not match your profile? Send us your spontaneous application — we will keep it and contact you as soon as a relevant opportunity arises"}
             </h3>
             <Card>
               <CardHeader>

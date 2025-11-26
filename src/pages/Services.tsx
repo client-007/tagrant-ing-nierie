@@ -26,8 +26,8 @@ const Services = () => {
       capabilities:
         language === 'fr'
           ? [
-              'Analyse de variance des plannings',
-              'Expertise des méthodes d\'exécution',
+              'Analyse des écarts de planning',
+              'Expertise en méthodes d\'exécution',
               'Opérations sur sites occupés',
               'Comparaison de scénarios et support aux décisions',
               'Gestion des réclamations contractuelles',
@@ -47,16 +47,16 @@ const Services = () => {
       link: '/services/technical-studies',
       description:
         language === 'fr'
-          ? 'Études techniques fiables et modélisation précise pour assurer le succès de vos projets d\'ingénierie civile et d\'infrastructure. Nous fournissons de l\'ingénierie assistée par ordinateur de haute qualité centrée sur la qualité des études et la continuité entre bureaux de conception et d\'exécution.'
+          ? 'Nous réalisons des études techniques et de la modélisation pour assurer la réussite de vos projets de génie civil et d\'infrastructure. Nous fournissons des maquettes numériques (BIM) de haute qualité, axées sur la rigueur des études et la continuité entre bureaux d\'études et équipes d\'exécution.'
           : 'Reliable technical studies and precise modeling to ensure the success of your civil engineering and infrastructure projects. We deliver high-quality computer-aided engineering focused on study quality and continuity between design offices and execution.',
       capabilities:
         language === 'fr'
           ? [
               'Calculs structurels & vérifications',
               'Modélisation CAO/BIM (AutoCAD, Revit)',
-              'Gestion des études d\'exécution',
-              'Coordination conception-chantier',
-              'Interface de support géotechnique',
+              'Pilotage des études d\'exécution',
+              'Coordination Etudes-Travaux',
+              'Gestion interface sol & structure',
             ]
           : [
               'Structural calculations & verifications',
@@ -68,21 +68,22 @@ const Services = () => {
     },
     {
       icon: Wrench,
-      title: language === 'fr' ? 'Inspection, Maintenance & Réparation' : 'Inspection, Maintenance & Repair',
+      title: language === 'fr' ? 'Inspection, Maintenance & Réparation des Ouvrages d\'art' : 'Inspection, Maintenance & Repair',
       image: serviceInspection,
       link: '/services/inspection',
       description:
         language === 'fr'
-          ? 'Services de diagnostic avancés pour les structures en béton et en acier pour évaluer la sécurité, la durabilité et la performance. Nous fournissons des rapports précis et basés sur les données qui soutiennent la planification des réparations et assurent la conformité aux normes européennes.'
+          ? 'Nous accompagnons les maîtres d\'ouvrage dans la compréhension, la préservation et la remise en état de leurs ouvrages d\'art. Nous identifions les désordres, en analysons les causes et définissons les solutions les plus adaptées.'
           : 'Advanced diagnostic services for concrete and steel structures to assess safety, durability, and performance. We deliver accurate, data-driven reports that support repair planning and ensure compliance with European standards.',
       capabilities:
         language === 'fr'
           ? [
-              'Tests non destructifs (NDT)',
-              'Modélisation par éléments finis',
-              'Inspections visuelles basées sur drones',
-              'Numérisation laser 3D',
-              'Conformité avec EN 1992, EN 1993, EN 1504',
+              'Inspecter les ouvrages et établir leur état réel à l\'instant T',
+              'Diagnostiquer les désordres et en comprendre les causes',
+              'Concevoir des solutions adaptées de réparation (AVP / PRO)',
+              'Préparer des DCE complets et exploitables',
+              'Assister à la consultation et au choix des entreprises',
+              'Suivre l\'exécution des travaux jusqu\'à la réception',
             ]
           : [
               'Non-destructive testing (NDT)',
@@ -144,10 +145,7 @@ const Services = () => {
                     />
                   </div>
                   <CardHeader className="pb-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <IconComponent className="h-6 w-6 text-primary" />
-                      <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                    </div>
+                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
                     <CardDescription className="text-base leading-relaxed text-foreground">
                       {service.description}
                     </CardDescription>
@@ -155,7 +153,7 @@ const Services = () => {
                   <CardContent className="flex-1 flex flex-col justify-between">
                     <div className="mb-6">
                       <h4 className="font-semibold text-foreground mb-3">
-                        {language === 'fr' ? 'Capacités clés:' : 'Key Capabilities:'}
+                        {language === 'fr' ? 'Compétences clés:' : 'Key Capabilities:'}
                       </h4>
                       <ul className="space-y-2">
                         {service.capabilities.map((capability, capIndex) => (
