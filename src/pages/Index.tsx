@@ -177,10 +177,7 @@ const Index = () => {
                     />
                   </div>
                   <CardHeader className="pb-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <IconComponent className="h-6 w-6 text-primary" />
-                      <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                    </div>
+                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
                     <CardDescription className="text-base leading-relaxed text-foreground">
                       {service.description}
                     </CardDescription>
