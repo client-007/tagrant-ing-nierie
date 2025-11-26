@@ -22,7 +22,7 @@ const Services = () => {
       description:
         language === 'fr'
           ? 'Support opérationnel en génie civil et infrastructure pour sécuriser les plannings, les méthodes et la livraison des projets. Nous fournissons un support de projet intégré sur site pour transformer les études en solutions immédiatement réalisables.'
-          : 'Operational support in civil engineering and infrastructure to secure schedules, methods and project delivery. We provide integrated on-site project support, operating at the heart of the site to transform studies into immediately implementable solutions.',
+          : 'Operational civil engineering and infrastructure support to secure schedules, methods, and project delivery. We provide integrated on-site project support to transform studies into immediately implementable solutions.',
       capabilities:
         language === 'fr'
           ? [
@@ -33,7 +33,7 @@ const Services = () => {
               'Gestion des réclamations contractuelles',
             ]
           : [
-              'Schedule variance analysis',
+              'Schedule gap analysis',
               'Execution methods expertise',
               'Operations on occupied sites',
               'Scenario comparison & decision support',
@@ -48,7 +48,7 @@ const Services = () => {
       description:
         language === 'fr'
           ? 'Nous réalisons des études techniques et de la modélisation pour assurer la réussite de vos projets de génie civil et d\'infrastructure. Nous fournissons des maquettes numériques (BIM) de haute qualité, axées sur la rigueur des études et la continuité entre bureaux d\'études et équipes d\'exécution.'
-          : 'Reliable technical studies and precise modeling to ensure the success of your civil engineering and infrastructure projects. We deliver high-quality computer-aided engineering focused on study quality and continuity between design offices and execution.',
+          : 'We carry out technical studies and modeling to ensure the success of your civil engineering and infrastructure projects. We provide high-quality digital models (BIM), focused on study rigor and continuity between design offices and execution teams.',
       capabilities:
         language === 'fr'
           ? [
@@ -61,20 +61,20 @@ const Services = () => {
           : [
               'Structural calculations & verifications',
               'CAD/BIM modeling (AutoCAD, Revit)',
-              'Execution study management',
-              'Design-to-works coordination',
-              'Geotechnical support interface',
+              'Execution studies management',
+              'Studies-Works coordination',
+              'Soil & structure interface management',
             ],
     },
     {
       icon: Wrench,
-      title: language === 'fr' ? 'Inspection, Maintenance & Réparation des Ouvrages d\'art' : 'Inspection, Maintenance & Repair',
+      title: language === 'fr' ? 'Inspection, Maintenance & Réparation des Ouvrages d\'art' : 'Inspection, Maintenance & Repair of Structures',
       image: serviceInspection,
       link: '/services/inspection',
       description:
         language === 'fr'
           ? 'Nous accompagnons les maîtres d\'ouvrage dans la compréhension, la préservation et la remise en état de leurs ouvrages d\'art. Nous identifions les désordres, en analysons les causes et définissons les solutions les plus adaptées.'
-          : 'Advanced diagnostic services for concrete and steel structures to assess safety, durability, and performance. We deliver accurate, data-driven reports that support repair planning and ensure compliance with European standards.',
+          : 'We support project owners in understanding, preserving, and restoring their structures. We identify defects, analyze their causes, and define the most appropriate solutions.',
       capabilities:
         language === 'fr'
           ? [
@@ -86,11 +86,12 @@ const Services = () => {
               'Suivre l\'exécution des travaux jusqu\'à la réception',
             ]
           : [
-              'Non-destructive testing (NDT)',
-              'Finite Element Modeling',
-              'Drone-based visual inspections',
-              '3D laser scanning',
-              'Compliance with EN 1992, EN 1993, EN 1504',
+              'Inspect structures and establish their actual condition at time T',
+              'Diagnose defects and understand their causes',
+              'Design appropriate repair solutions (preliminary/detailed design)',
+              'Prepare complete and actionable tender documents',
+              'Assist with consultation and contractor selection',
+              'Monitor work execution until completion',
             ],
     },
     {
@@ -101,7 +102,7 @@ const Services = () => {
       description:
         language === 'fr'
           ? 'Programmes de formation en ingénierie conçus pour développer les compétences techniques et l\'expertise professionnelle. Notre formation comble le fossé entre la théorie et la pratique, permettant aux ingénieurs et aux équipes d\'exceller dans leurs rôles.'
-          : 'Comprehensive engineering training programs designed to develop technical skills and professional expertise. Our training bridges the gap between theory and practice, empowering engineers and teams to excel in their roles.',
+          : 'Engineering training programs designed to develop technical skills and professional expertise. Our training bridges the gap between theory and practice, enabling engineers and teams to excel in their roles.',
       capabilities:
         language === 'fr'
           ? [
@@ -116,7 +117,7 @@ const Services = () => {
               'Project management training',
               'Software & digital tools',
               'Safety & quality standards',
-              'Professional certification support',
+              'Inspection & diagnosis methods for structures',
             ],
     },
   ];
@@ -133,47 +134,45 @@ const Services = () => {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <Card
-                  key={index}
-                  className="overflow-hidden hover:shadow-xl transition-all border flex flex-col"
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed text-foreground">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1 flex flex-col justify-between">
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">
-                        {language === 'fr' ? 'Compétences clés:' : 'Key Capabilities:'}
-                      </h4>
-                      <ul className="space-y-2">
-                        {service.capabilities.map((capability, capIndex) => (
-                          <li key={capIndex} className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span className="text-sm text-muted-foreground">{capability}</span>
-                          </li>
-                        ))}
-                      </ul>
+                <Link key={index} to={service.link}>
+                  <Card
+                    className="overflow-hidden hover:shadow-xl transition-all border flex flex-col cursor-pointer"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <Button 
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
-                      asChild
-                    >
-                      <Link to={service.link}>
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-2xl font-bold mb-3">{service.title}</CardTitle>
+                      <CardDescription className="text-base leading-relaxed text-foreground">
+                        {service.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col justify-between">
+                      <div className="mb-6">
+                        <h4 className="font-semibold text-foreground mb-3">
+                          {language === 'fr' ? 'Compétences clés:' : 'Key Skills:'}
+                        </h4>
+                        <ul className="space-y-2">
+                          {service.capabilities.map((capability, capIndex) => (
+                            <li key={capIndex} className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span className="text-sm text-muted-foreground">{capability}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground pointer-events-none" 
+                      >
                         {language === 'fr' ? 'En savoir plus' : 'Learn More'}
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               );
             })}
           </div>
