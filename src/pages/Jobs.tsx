@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Upload } from 'lucide-react';
+import { Upload, MapPin, Briefcase, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Jobs = () => {
   const { language } = useLanguage();
@@ -15,8 +16,56 @@ const Jobs = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Why Join Us */}
+      {/* Open Positions */}
       <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              {language === 'fr' ? 'Postes ouverts' : 'Open Positions'}
+            </h2>
+            
+            <Link to="/jobs/project-planner-brussels">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                        Project Planner — Ouvrages souterrains
+                      </CardTitle>
+                      <CardDescription className="mt-2 text-base">
+                        {language === 'fr' 
+                          ? "Poste avec présence à Bruxelles"
+                          : "Position with presence in Brussels"}
+                      </CardDescription>
+                    </div>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
+                      <span>Bruxelles, Belgique</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Briefcase className="h-4 w-4" />
+                      <span>{language === 'fr' ? 'Temps plein' : 'Full-time'}</span>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-muted-foreground line-clamp-2">
+                    {language === 'fr'
+                      ? "Nous recrutons un(e) Project Planner confirmé(e) pour participer à la planification et à la coordination d'importants travaux d'infrastructure souterraine."
+                      : "We are recruiting an experienced Project Planner to participate in the planning and coordination of major underground infrastructure works."}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join Us */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -32,7 +81,7 @@ const Jobs = () => {
       </section>
 
       {/* Application Form */}
-      <section className="py-8 pb-16">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8">

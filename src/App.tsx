@@ -20,6 +20,7 @@ import ProjectManagement from "./pages/services/ProjectManagement";
 import TechnicalStudies from "./pages/services/TechnicalStudies";
 import Inspection from "./pages/services/Inspection";
 import ProfessionalTraining from "./pages/services/ProfessionalTraining";
+import ProjectPlannerBrussels from "./pages/jobs/ProjectPlannerBrussels";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Blog />} />
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/jobs/project-planner-brussels" element={<ProjectPlannerBrussels />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/search" element={<SearchResults />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
