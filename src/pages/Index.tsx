@@ -6,7 +6,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { TestimonialCarousel } from '@/components/TestimonialCarousel';
-import { ArrowRight, Shield, Award, Users, Lightbulb, Heart, Zap, Target, Eye } from 'lucide-react';
+import { ArrowRight, Shield, Award, Users, Lightbulb, Heart, Zap, Target, Eye, FolderKanban, FileText, Wrench, GraduationCap } from 'lucide-react';
 import serviceProject from '@/assets/service-project.jpg';
 import serviceStudies from '@/assets/service-studies.jpg';
 import serviceInspection from '@/assets/service-inspection-engineer.jpg';
@@ -15,30 +15,84 @@ import serviceTraining from '@/assets/service-training.jpg';
 const Index = () => {
   const { t } = useLanguage();
 
+  const { language } = useLanguage();
+
   const services = [
     {
+      icon: FolderKanban,
       title: t('services.project'),
       description: t('services.project.desc'),
       image: serviceProject,
       link: '/services/project-management',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Analyse de variance des plannings',
+              'Expertise des méthodes d\'exécution',
+              'Opérations sur sites occupés',
+            ]
+          : [
+              'Schedule variance analysis',
+              'Execution methods expertise',
+              'Operations on occupied sites',
+            ],
     },
     {
+      icon: FileText,
       title: t('services.studies'),
       description: t('services.studies.desc'),
       image: serviceStudies,
       link: '/services/technical-studies',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Calculs structurels & vérifications',
+              'Modélisation CAO/BIM (AutoCAD, Revit)',
+              'Coordination conception-chantier',
+            ]
+          : [
+              'Structural calculations & verifications',
+              'CAD/BIM modeling (AutoCAD, Revit)',
+              'Design-to-works coordination',
+            ],
     },
     {
+      icon: Wrench,
       title: t('services.inspection'),
       description: t('services.inspection.desc'),
       image: serviceInspection,
       link: '/services/inspection',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Tests non destructifs (NDT)',
+              'Modélisation par éléments finis',
+              'Numérisation laser 3D',
+            ]
+          : [
+              'Non-destructive testing (NDT)',
+              'Finite Element Modeling',
+              '3D laser scanning',
+            ],
     },
     {
+      icon: GraduationCap,
       title: t('services.professionalTraining'),
       description: t('services.professionalTraining.desc'),
       image: serviceTraining,
       link: '/services/professional-training',
+      capabilities:
+        language === 'fr'
+          ? [
+              'Développement de compétences techniques',
+              'Formation en gestion de projet',
+              'Normes de sécurité et qualité',
+            ]
+          : [
+              'Technical skills development',
+              'Project management training',
+              'Safety & quality standards',
+            ],
     },
   ];
 
@@ -107,30 +161,56 @@ const Index = () => {
               {t('services.subtitle')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Link key={index} to={service.link} className="block">
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow group flex flex-col h-full cursor-pointer">
-                  <div className="relative aspect-[4/3.3] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <Card
+                  key={index}
+                  className="overflow-hidden hover:shadow-xl transition-all border flex flex-col"
+                >
+                  <div className="relative h-64 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardHeader className="flex-1">
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="inline-flex items-center text-primary group-hover:text-brand-yellow transition-colors font-medium group/link">
-                      {t('services.learn')}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                      <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
                     </div>
+                    <CardDescription className="text-base leading-relaxed text-foreground">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col justify-between">
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">
+                        {language === 'fr' ? 'Capacités clés:' : 'Key Capabilities:'}
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.capabilities.map((capability, capIndex) => (
+                          <li key={capIndex} className="flex items-start">
+                            <span className="text-primary mr-2 mt-1">•</span>
+                            <span className="text-sm text-muted-foreground">{capability}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" 
+                      asChild
+                    >
+                      <Link to={service.link}>
+                        {language === 'fr' ? 'En savoir plus' : 'Learn More'}
+                      </Link>
+                    </Button>
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
