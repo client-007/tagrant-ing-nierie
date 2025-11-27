@@ -194,7 +194,7 @@ const Index = () => {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <Link key={index} to={service.link}>
+                <Link key={index} to={service.link} className="h-full">
                   <Card
                     className="overflow-hidden hover:shadow-xl transition-all border flex flex-col h-full cursor-pointer"
                   >
