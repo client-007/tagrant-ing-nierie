@@ -76,20 +76,20 @@ const Inspection = () => {
   const methodology =
     language === 'fr'
       ? [
-          'Inspection – État à l\'instant T et premières préconisations.',
-          'Diagnostic – Analyse des causes et des risques.',
-          'Études de conception – Scénarios, choix et chiffrage précis.',
-          'DCE – Pièces techniques et estimation des travaux.',
-          'Consultation – Analyse des offres et choix des entreprises.',
-          'Suivi d\'exécution & réception – Contrôle, levée des réserves et DOE.',
+          'Etape 1: Inspection – État à l\'instant T et premières préconisations.',
+          'Etape 2: Diagnostic – Analyse des causes et des risques.',
+          'Etape 3: Études de conception – Scénarios, choix et chiffrage précis.',
+          'Etape 4: DCE – Pièces techniques et estimation des travaux.',
+          'Etape 5: Consultation – Analyse des offres et choix des entreprises.',
+          'Etape 6: Suivi d\'exécution & réception – Contrôle, levée des réserves et DOE.',
         ]
       : [
-          'Inspection – State at time T and initial recommendations.',
-          'Diagnosis – Analysis of causes and risks.',
-          'Design studies – Scenarios, selection and precise costing.',
-          'Tender documents – Technical specifications and work estimates.',
-          'Tendering – Analysis of offers and contractor selection.',
-          'Execution supervision & handover – Control, defect resolution and as-built documentation.',
+          'Step 1: Inspection – State at time T and initial recommendations.',
+          'Step 2: Diagnosis – Analysis of causes and risks.',
+          'Step 3: Design studies – Scenarios, selection and precise costing.',
+          'Step 4: Tender documents – Technical specifications and work estimates.',
+          'Step 5: Tendering – Analysis of offers and contractor selection.',
+          'Step 6: Execution supervision & handover – Control, defect resolution and as-built documentation.',
         ];
 
   const deliverables =
@@ -242,11 +242,14 @@ const Inspection = () => {
               <h3 className="text-2xl font-bold mb-6 text-foreground">
                 {language === 'fr' ? 'Méthodologie' : 'Methodology'}
               </h3>
-              <ol className="space-y-3 list-decimal list-inside text-muted-foreground">
+              <div className="space-y-3">
                 {methodology.map((step, index) => (
-                  <li key={index} className="leading-relaxed">{step}</li>
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground leading-relaxed">{step}</span>
+                  </div>
                 ))}
-              </ol>
+              </div>
             </CardContent>
           </Card>
 
