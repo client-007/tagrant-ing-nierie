@@ -275,31 +275,40 @@ const Inspection = () => {
               </h3>
               
               <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    {language === 'fr' ? 'Outils d\'inspection et d\'investigation:' : 'Inspection and investigation tools:'}
-                  </h4>
-                  <p className="text-muted-foreground">
-                    {tools.inspection.join(', ')}
-                  </p>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {language === 'fr' ? 'Outils d\'inspection et d\'investigation:' : 'Inspection and investigation tools:'}
+                    </h4>
+                    <p className="text-muted-foreground">
+                      {tools.inspection.join(', ')}
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    {language === 'fr' ? 'Outils logiciels:' : 'Software tools:'}
-                  </h4>
-                  <p className="text-muted-foreground">
-                    {tools.software.join(', ')}
-                  </p>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {language === 'fr' ? 'Outils logiciels:' : 'Software tools:'}
+                    </h4>
+                    <p className="text-muted-foreground">
+                      {tools.software.join(', ')}
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">
-                    {language === 'fr' ? 'Référentiels & conformité:' : 'Standards & compliance:'}
-                  </h4>
-                  <p className="text-muted-foreground">
-                    {tools.compliance.join(', ')}
-                  </p>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {language === 'fr' ? 'Référentiels & conformité:' : 'Standards & compliance:'}
+                    </h4>
+                    <p className="text-muted-foreground">
+                      {tools.compliance.join(', ')}
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
