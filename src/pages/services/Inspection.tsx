@@ -244,14 +244,14 @@ const Inspection = () => {
               </h3>
               <div className="space-y-3">
                 {methodology.map((step, index) => {
-                  const [label, ...rest] = step.split(':');
-                  const description = rest.join(':');
+                  const [label, ...rest] = step.split('–');
+                  const description = rest.join('–').trim();
                   return (
                     <div key={index} className="flex items-start space-x-3">
                       <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                       <span className="leading-relaxed">
-                        <span className="font-semibold text-foreground">{label}:</span>
-                        <span className="text-muted-foreground">{description}</span>
+                        <span className="font-semibold text-foreground">{label.trim()}</span>
+                        <span className="text-muted-foreground"> – {description}</span>
                       </span>
                     </div>
                   );
