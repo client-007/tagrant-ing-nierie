@@ -99,15 +99,22 @@ const ProjectManagement = () => {
           <Card className="mb-12">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-6 text-foreground">
-                {language === 'fr' ? 'Prestations' : 'Services'}
+                {language === 'fr' ? 'Nos prestations' : 'Our Services'}
               </h3>
-              <div className="space-y-4">
-                {services.map((service, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground leading-relaxed">{service}</span>
-                  </div>
-                ))}
+              <div className="space-y-6">
+                {services.map((service, index) => {
+                  const [title, ...rest] = service.split(':');
+                  const description = rest.join(':').trim();
+                  return (
+                    <div key={index}>
+                      <h4 className="font-semibold text-foreground mb-2 flex items-start">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 mr-2" />
+                        {title}
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed ml-7">{description}</p>
+                    </div>
+                  );
+                })}
               </div>
             </CardContent>
           </Card>
