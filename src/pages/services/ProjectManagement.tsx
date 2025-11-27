@@ -118,23 +118,29 @@ const ProjectManagement = () => {
               <h3 className="text-2xl font-bold mb-6 text-foreground">
                 {language === 'fr' ? 'Mode d\'intervention' : 'Mode of Engagement'}
               </h3>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  <strong className="text-foreground">
-                    {language === 'fr' ? 'Intégration : ' : 'Integrated delivery: '}
-                  </strong>
-                  {language === 'fr'
-                    ? 'Collaboration étroite avec vos équipes, participation aux réunions opérationnelles et reporting régulier.'
-                    : 'Close collaboration with your teams, participation in operational meetings and regular reporting.'}
-                </p>
-                <p>
-                  <strong className="text-foreground">
-                    {language === 'fr' ? 'Engagement flexible : ' : 'Flexible commitment: '}
-                  </strong>
-                  {language === 'fr'
-                    ? 'Interventions modulables en durée et intensité selon les besoins du projet.'
-                    : 'Engagements scalable in duration and intensity to match project needs.'}
-                </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">
+                      {language === 'fr' ? 'Intégration : ' : 'Integrated delivery: '}
+                    </strong>
+                    {language === 'fr'
+                      ? 'Collaboration étroite avec vos équipes, participation aux réunions opérationnelles et reporting régulier.'
+                      : 'Close collaboration with your teams, participation in operational meetings and regular reporting.'}
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-muted-foreground">
+                    <strong className="text-foreground">
+                      {language === 'fr' ? 'Engagement flexible : ' : 'Flexible commitment: '}
+                    </strong>
+                    {language === 'fr'
+                      ? 'Interventions modulables en durée et intensité selon les besoins du projet.'
+                      : 'Engagements scalable in duration and intensity to match project needs.'}
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
