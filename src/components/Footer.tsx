@@ -19,7 +19,7 @@ export const Footer = () => {
     { path: '/services/project-management', label: t('services.project') },
     { path: '/services/technical-studies', label: t('services.studies') },
     { path: '/services/inspection', label: t('services.inspection') },
-    { path: '/services/training', label: t('services.training') },
+    { path: '/services/professional-training', label: t('services.training') },
   ];
 
   return (
