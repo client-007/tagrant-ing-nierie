@@ -95,7 +95,7 @@ export const Footer = () => {
               <h4 className="text-base font-semibold mb-3">{t('footer.follow')}</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/tagrant-ingenierie/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
